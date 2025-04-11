@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import LogoLight from "../images/dtalk-light-theme-logo-retina.png";
-import LogoDark from "../images/dtalk-dark-theme-logo-retina.png";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 
