@@ -14,18 +14,21 @@ export default function MobilePhones() {
       author: "Aco",
       date: "March 15, 2020",
       image: OneImage,
+      link: "/mobiles/schools-parents-disagree-over-bans-on-student-mobile-phones",
     },
     {
       title: "iPhone 11 Pro Max Price Slashed By 18%! Hurry Up, Grab It Now",
       author: "Aco",
       date: "March 15, 2020",
       image: TwoImage,
+      link: "/mobiles/iphone-11-pro-max-price-slashed-by-18-hurry-up-grab-it-now",
     },
     {
       title: "HMD Global Announces New HMD Brand for New Mobile Phones",
       author: "Aco",
       date: "March 15, 2020",
       image: ThreeImage,
+      link: "/mobiles/hmd-global-announces-new-hmd-brand-for-new-mobile-phones",
     },
   ];
 
@@ -63,9 +66,11 @@ export default function MobilePhones() {
                 className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
               />
             </div>
-            <h2 className="text-xl font-bold mb-2 text-black hover:text-yellow-500 transition duration-300">
-              {article.title}
-            </h2>
+            <Link href={article.link}>
+              <h2 className="text-xl font-bold mb-2 text-black hover:text-yellow-500 transition duration-300">
+                {article.title}
+              </h2>
+            </Link>
             <div className="flex items-center text-gray-500 text-sm">
               <span>{article.author}</span>
               <span className="mx-2">•</span>

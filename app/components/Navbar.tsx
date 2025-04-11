@@ -12,7 +12,6 @@ export default function Navbar() {
     <nav className="w-full border-b border-black-200 dark:border-black-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Social Media Icons */}
           <div className="flex space-x-4 pt-6">
             <Link
               href="https://facebook.com"
@@ -34,14 +33,12 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Logo */}
           <div className="flex-shrink-0 pt-6">
             <Link href="/" className="flex items-center">
               <Image src={LogoLight} alt="Logo" className="h-20 w-auto" />
             </Link>
           </div>
 
-          {/* Login Button */}
           <div>
             <Link
               href="/login"

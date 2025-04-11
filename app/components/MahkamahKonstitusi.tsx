@@ -12,8 +12,7 @@ export default function MahkamahKonstitusi() {
   const newsItems = [
     {
       category: "GADGETS",
-      title:
-        "Save $25 on Philips Headphone For A Great Sounding Over-Ear Headphone",
+      title: "Save $25 on Philips Headphone For A Great Sounding Over-Ear Headphone",
       date: "March 15, 2020",
       views: 4,
       image: SecondImage,
@@ -50,7 +49,6 @@ export default function MahkamahKonstitusi() {
     <div className="w-full py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row">
-          {/* Mahkamah Konstitusi Section - Increased width from 1/2 to 2/3 */}
           <div className="md:w-2/3 mb-6 md:mb-0 md:pr-6 px-10">
             <div className="relative w-full h-[500px]">
               <Image
@@ -70,7 +68,6 @@ export default function MahkamahKonstitusi() {
             </div>
           </div>
 
-          {/* News Just In Section - Decreased width from 1/2 to 1/3 */}
           <div className="md:w-1/3 px-4">
             <div className="mb-4 flex items-center">
               <h2 className="text-yellow-500 text-xl font-bold mr-2">News</h2>

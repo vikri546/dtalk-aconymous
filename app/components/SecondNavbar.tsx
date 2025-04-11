@@ -16,7 +16,6 @@ export default function SecondNavbar() {
     <nav className="absolute w-full z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Date */}
           <div className="text-sm text-black-600 dark:text-black-400">
             {new Date().toLocaleDateString("id-ID", {
               weekday: "long",
@@ -26,7 +25,6 @@ export default function SecondNavbar() {
             })}
           </div>
 
-          {/* Categories */}
           <div className="hidden md:flex space-x-8">
             <Link
               href="/kategori1"
@@ -54,7 +52,6 @@ export default function SecondNavbar() {
             </Link>
           </div>
 
-          {/* Right Icons */}
           <div className="flex items-center space-x-4">
             <button className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300">
               <FiSearch size={20} />
