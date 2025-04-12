@@ -12,11 +12,12 @@ export default function MahkamahKonstitusi() {
   const newsItems = [
     {
       category: "GADGETS",
-      title: "Save $25 on Philips Headphone For A Great Sounding Over-Ear Headphone",
+      title:
+        "Save $25 on Philips Headphone For A Great Sounding Over-Ear Headphone",
       date: "March 15, 2020",
       views: 4,
       image: SecondImage,
-      link: "/gadgets/philips-headphone-deal"
+      link: "/gadgets/philips-headphone-deal",
     },
     {
       category: "DRONES",
@@ -24,7 +25,7 @@ export default function MahkamahKonstitusi() {
       date: "January 13, 2020",
       views: 2,
       image: SixImage,
-      link: "/drones/photography-drone-review"
+      link: "/drones/photography-drone-review",
     },
     {
       category: "GADGETS",
@@ -32,7 +33,7 @@ export default function MahkamahKonstitusi() {
       date: "January 12, 2020",
       views: 2,
       image: SevenImage,
-      link: "/gadgets/black-friday-smartwatch-deals"
+      link: "/gadgets/black-friday-smartwatch-deals",
     },
     {
       category: "JUST IN",
@@ -41,15 +42,15 @@ export default function MahkamahKonstitusi() {
       date: "January 11, 2020",
       views: 4,
       image: EightImage,
-      link: "/tech/noise-canceling-earbuds-battery-life"
+      link: "/tech/noise-canceling-earbuds-battery-life",
     },
   ];
 
   return (
     <div className="w-full py-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-2/3 mb-6 md:mb-0 md:pr-6 px-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-4 lg:px-6">
+        <div className="flex flex-col md:flex-row md:space-x-4 justify-between">
+          <div className="md:w-2/3 mb-6 md:mb-0 md:pr-6 px-2">
             <div className="relative w-full h-[500px]">
               <Image
                 src={Mahkamah}
@@ -64,12 +65,14 @@ export default function MahkamahKonstitusi() {
                   Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!
                 </h1>
               </Link>
-              <div className="mt-3 text-gray-700 text-lg">Aco</div>
+              <div className="mt-3 text-gray-700 text-sm">
+                <Link href="/author/aco" className="hover:text-yellow-300 transition duration-300">Aco</Link> • <span>Januari 11, 2020</span>
+              </div>
             </div>
           </div>
 
-          <div className="md:w-1/3 px-4">
-            <div className="mb-4 flex items-center">
+          <div className="md:w-1/3 px-2 w-full">
+            <div className="mb-4 flex items-center w-full">
               <h2 className="text-yellow-500 text-xl font-bold mr-2">News</h2>
               <span className="text-gray-800 text-xl font-bold flex-grow">
                 Just In
@@ -79,18 +82,18 @@ export default function MahkamahKonstitusi() {
               <div className="w-10 h-1 bg-yellow-500"></div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 w-full">
               {newsItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center border-b-2 border-gray-200 pb-3"
+                  className="flex items-center border-b-2 border-gray-200 pb-3 w-full"
                 >
                   <div className="flex-grow pr-2">
                     <div className="text-yellow-500 text-xs font-semibold mb-2">
                       {item.category}
                     </div>
                     <Link href={item.link}>
-                      <h3 className="text-sm text-black hover:text-yellow-300 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
+                      <h3 className="text-base text-black hover:text-yellow-300 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
                         {item.title}
                       </h3>
                     </Link>

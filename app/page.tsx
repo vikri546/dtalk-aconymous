@@ -3,6 +3,7 @@ import SecondNavbar from "./components/SecondNavbar";
 import CircleImage from "./components/CircleImage";
 import MahkamahKonstitusi from "./components/MahkamahKonstitusi";
 import MobilePhones from "./components/MobilePhones";
+import ScienceInnovation from "./components/ScienceInnovation";
 
 export default function Layout() {
   return (
@@ -12,6 +13,7 @@ export default function Layout() {
       <CircleImage />
       <MahkamahKonstitusi />
       <MobilePhones />
+      <ScienceInnovation />
     </div>
   );
 }

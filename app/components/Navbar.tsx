@@ -3,32 +3,34 @@
 import Link from "next/link";
 import Image from "next/image";
 import LogoLight from "../images/dtalk-light-theme-logo-retina.png";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import { FiUser } from "react-icons/fi";
+import { FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoInstagram } from "react-icons/io5";
+import { PiUserCircleFill } from "react-icons/pi";
 
 export default function Navbar() {
   return (
     <nav className="w-full border-b border-black-200 dark:border-black-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex space-x-4 pt-6">
             <Link
               href="https://facebook.com"
-              className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+              className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300 p-2 border rounded-full flex items-center justify-center"
             >
-              <FaFacebook size={20} />
+              <FaFacebookF size={20} />
             </Link>
             <Link
               href="https://twitter.com"
-              className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+              className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300 p-2 border rounded-full flex items-center justify-center"
             >
-              <FaTwitter size={20} />
+              <FaXTwitter size={20} />
             </Link>
             <Link
               href="https://instagram.com"
-              className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+              className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300 p-2 border rounded-full flex items-center justify-center"
             >
-              <FaInstagram size={20} />
+              <IoLogoInstagram size={20} />
             </Link>
           </div>
 
@@ -43,7 +45,7 @@ export default function Navbar() {
               href="/login"
               className="inline-flex items-center pt-8 py-2 border border-transparent text-Aco font-medium rounded-md text-black-600 hover:text-yellow-200 transition-colors duration-300"
             >
-              <FiUser className="mr-2 size-5" />
+              <PiUserCircleFill className="mr-2 size-5" />
               LOGIN
             </Link>
           </div>

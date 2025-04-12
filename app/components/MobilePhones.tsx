@@ -6,6 +6,7 @@ import Link from "next/link";
 import OneImage from "../images/mobile phones/one.png";
 import TwoImage from "../images/mobile phones/two.png";
 import ThreeImage from "../images/mobile phones/three.png";
+import Iklan from "../images/iklan.png";
 
 export default function MobilePhones() {
   const articles = [
@@ -33,7 +34,7 @@ export default function MobilePhones() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-16 py-8">
+    <div className="max-w-6xl mx-auto px-8 py-8">
       <Head>
         <title>Mobile Phones</title>
         <meta name="description" content="Latest mobile phone news and deals" />
@@ -72,7 +73,7 @@ export default function MobilePhones() {
               </h2>
             </Link>
             <div className="flex items-center text-gray-500 text-sm">
-              <span>{article.author}</span>
+              <Link href="/" className="hover:text-yellow-300 transition duration-300">{article.author}</Link>
               <span className="mx-2">•</span>
               <span>{article.date}</span>
             </div>
@@ -80,6 +81,16 @@ export default function MobilePhones() {
           </div>
         ))}
       </div>
+
+      <Link href="/" className="flex justify-center mt-20">
+        <Image
+          src={Iklan}
+          alt="Iklan"
+          width={970}
+          height={125}
+          className="object-cover"
+        />
+      </Link>
     </div>
   );
 }
