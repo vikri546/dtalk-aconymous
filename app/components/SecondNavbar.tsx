@@ -25,7 +25,7 @@ export default function SecondNavbar() {
             })}
           </div>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-10">
             <Link
               href="/kategori1"
               className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"

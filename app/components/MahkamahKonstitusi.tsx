@@ -51,22 +51,28 @@ export default function MahkamahKonstitusi() {
       <div className="max-w-6xl mx-auto px-4 sm:px-4 lg:px-6">
         <div className="flex flex-col md:flex-row md:space-x-4 justify-between">
           <div className="md:w-2/3 mb-6 md:mb-0 md:pr-6 px-2">
-            <div className="relative w-full h-[500px]">
-              <Image
-                src={Mahkamah}
-                alt="Mahkamah Konstitusi"
-                fill
-                className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75"
-              />
-            </div>
             <div className="relative bottom-0 left-0 right-0">
-              <Link href="/mahkamah-konstitusi">
+              <Link href="#">
+                <div className="relative w-full h-[500px]">
+                  <Image
+                    src={Mahkamah}
+                    alt="Mahkamah Konstitusi"
+                    fill
+                    className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75"
+                  />
+                </div>
                 <h1 className="text-5xl font-black leading-tight max-w-full break-words mt-4 text-black hover:text-yellow-300 transition duration-300">
                   Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!
                 </h1>
               </Link>
               <div className="mt-3 text-gray-700 text-sm">
-                <Link href="/author/aco" className="hover:text-yellow-300 transition duration-300">Aco</Link> • <span>Januari 11, 2020</span>
+                <Link
+                  href="/author/aco"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
+                  Aco
+                </Link>{" "}
+                • <span>Januari 11, 2020</span>
               </div>
             </div>
           </div>
@@ -124,7 +130,7 @@ export default function MahkamahKonstitusi() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex-shrink-0">
+                  <Link href={item.link} className="flex-shrink-0">
                     <div className="w-20 h-20 relative rounded-full overflow-hidden">
                       <Image
                         src={item.image}
@@ -133,7 +139,7 @@ export default function MahkamahKonstitusi() {
                         className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                       />
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>

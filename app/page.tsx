@@ -4,6 +4,7 @@ import CircleImage from "./components/CircleImage";
 import MahkamahKonstitusi from "./components/MahkamahKonstitusi";
 import MobilePhones from "./components/MobilePhones";
 import ScienceInnovation from "./components/ScienceInnovation";
+import TrendingNow from "./components/TrendingNow";
 
 export default function Layout() {
   return (
@@ -14,6 +15,7 @@ export default function Layout() {
       <MahkamahKonstitusi />
       <MobilePhones />
       <ScienceInnovation />
+      <TrendingNow />
     </div>
   );
 }

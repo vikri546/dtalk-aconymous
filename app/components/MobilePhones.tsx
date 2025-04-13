@@ -58,22 +58,27 @@ export default function MobilePhones() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {articles.map((article, index) => (
           <div key={index} className="flex flex-col relative">
-            <div className="rounded-md overflow-hidden mb-4">
-              <Image
-                src={article.image}
-                alt={article.title}
-                width={400}
-                height={250}
-                className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
-              />
-            </div>
             <Link href={article.link}>
+              <div className="rounded-md overflow-hidden mb-4">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
+                />
+              </div>
               <h2 className="text-xl font-bold mb-2 text-black hover:text-yellow-500 transition duration-300">
                 {article.title}
               </h2>
             </Link>
             <div className="flex items-center text-gray-500 text-sm">
-              <Link href="/" className="hover:text-yellow-300 transition duration-300">{article.author}</Link>
+              <Link
+                href="/"
+                className="hover:text-yellow-300 transition duration-300"
+              >
+                {article.author}
+              </Link>
               <span className="mx-2">•</span>
               <span>{article.date}</span>
             </div>
