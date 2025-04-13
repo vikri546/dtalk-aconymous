@@ -14,7 +14,7 @@ export default function MahkamahKonstitusi() {
       category: "GADGETS",
       title:
         "Save $25 on Philips Headphone For A Great Sounding Over-Ear Headphone",
-      date: "March 15, 2020",
+      date: "Maret 15, 2020",
       views: 4,
       image: SecondImage,
       link: "/gadgets/philips-headphone-deal",
@@ -22,7 +22,7 @@ export default function MahkamahKonstitusi() {
     {
       category: "DRONES",
       title: "Take Your Photography to The Next Level with This Drone",
-      date: "January 13, 2020",
+      date: "Januari 13, 2020",
       views: 2,
       image: SixImage,
       link: "/drones/photography-drone-review",
@@ -30,7 +30,7 @@ export default function MahkamahKonstitusi() {
     {
       category: "GADGETS",
       title: "The 15 Best Early Black Friday Smartwatch Deals",
-      date: "January 12, 2020",
+      date: "Januari 12, 2020",
       views: 2,
       image: SevenImage,
       link: "/gadgets/black-friday-smartwatch-deals",
@@ -39,7 +39,7 @@ export default function MahkamahKonstitusi() {
       category: "JUST IN",
       title:
         "These Noise Canceling Earbuds Promise Two Full Days of Battery Life",
-      date: "January 11, 2020",
+      date: "Januari 11, 2020",
       views: 4,
       image: EightImage,
       link: "/tech/noise-canceling-earbuds-battery-life",
