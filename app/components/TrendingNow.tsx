@@ -7,10 +7,8 @@ import TrendingTwo from "../images/trending now/trending2.png";
 import TrendingThree from "../images/trending now/trending3.png";
 import TrendingFour from "../images/trending now/trending4.png";
 import TrendingFive from "../images/trending now/trending5.png";
-import { getApp } from "firebase/app";
 
 export default function TrendingNews() {
-  // Constant for the smaller articles
   const sideArticles = [
     {
       id: 1,
@@ -59,7 +57,6 @@ export default function TrendingNews() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Main featured article - kept as direct JSX */}
           <div className="md:col-span-1">
             <Link href="#" className="block">
               <div className="relative h-[400px] overflow-hidden rounded-md">
@@ -88,7 +85,6 @@ export default function TrendingNews() {
             </div>
           </div>
 
-          {/* Right side articles - using the constant and map */}
           <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-auto">
             {sideArticles.map((article) => (
               <div key={article.id} className="flex flex-col h-full">

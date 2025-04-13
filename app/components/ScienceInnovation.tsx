@@ -74,7 +74,6 @@ export default function ScienceInnovation() {
   return (
     <div className="max-w-6xl px-8 py-8 mx-auto">
       <div className="flex flex-col md:flex-row gap-20">
-        {/* Main Content */}
         <div className="flex-1">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-xl font-bold">Science & Innovation</h1>
@@ -141,7 +140,6 @@ export default function ScienceInnovation() {
           </div>
         </div>
 
-        {/* Most Read Posts Sidebar */}
         <div className="md:w-2/5 flex-shrink-0">
           <div className="rounded-2xl border-2 border-yellow-500 overflow-hidden">
             <div className="p-6">
