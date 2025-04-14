@@ -94,7 +94,7 @@ export default function ScienceInnovation() {
                     {article.category}
                   </div>
                   <Link href={article.link}>
-                    <h3 className="text-xl text-black hover:text-yellow-300 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
+                    <h3 className="text-base sm:text-lg lg:text-xl text-black hover:text-yellow-300 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
                       {article.title}
                     </h3>
                   </Link>
@@ -126,7 +126,7 @@ export default function ScienceInnovation() {
                   </div>
                 </div>
                 <Link href={article.link} className="flex-shrink-0">
-                  <div className="w-32 h-32 relative rounded-md overflow-hidden">
+                  <div className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 relative rounded-md overflow-hidden">
                     <Image
                       src={article.image}
                       alt={article.title}
@@ -140,7 +140,7 @@ export default function ScienceInnovation() {
           </div>
         </div>
 
-        <div className="md:w-2/5 flex-shrink-0">
+        <div className="md:w-4/12 flex-shrink-0">
           <div className="rounded-2xl border-2 border-yellow-500 overflow-hidden">
             <div className="p-6">
               <h2 className="text-xl font-bold">

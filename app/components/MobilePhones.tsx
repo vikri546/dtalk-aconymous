@@ -87,15 +87,17 @@ export default function MobilePhones() {
         ))}
       </div>
 
-      <Link href="/" className="flex justify-center mt-20">
-        <Image
-          src={Iklan}
-          alt="Iklan"
-          width={970}
-          height={125}
-          className="object-cover"
-        />
-      </Link>
+      <div className="hidden md:block">
+        <Link href="/" className="flex justify-center mt-20">
+          <Image
+            src={Iklan}
+            alt="Iklan"
+            width={970}
+            height={125}
+            className="object-cover"
+          />
+        </Link>
+      </div>
     </div>
   );
 }

@@ -46,20 +46,20 @@ export default function TrendingNews() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
-      <div className="bg-gradient-to-b from-amber-400 to-black rounded-lg overflow-hidden p-10">
-        <div className="flex items-center justify-center mb-8">
+    <div className="w-full max-w-6xl mx-auto px-4 py-4 sm:px-6">
+      <div className="bg-gradient-to-b from-amber-400 to-black rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-10">
+        <div className="flex items-center justify-center mb-4 sm:mb-6 md:mb-8">
           <div className="h-[2px] bg-yellow-400 w-96"></div>
-          <h2 className="text-center text-white text-3xl font-bold mx-4">
+          <h2 className="text-center text-white text-xl sm:text-2xl md:text-3xl font-bold mx-2 sm:mx-4 whitespace-nowrap">
             TRENDING NOW
           </h2>
           <div className="h-[2px] bg-yellow-400 w-96"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="md:col-span-1">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="w-full">
             <Link href="#" className="block">
-              <div className="relative h-[400px] overflow-hidden rounded-md">
+              <div className="relative h-72 sm:h-80 md:h-80 lg:h-96 overflow-hidden rounded-md">
                 <Image
                   src={TrendingOne}
                   alt="Person splashing in water"
@@ -67,8 +67,8 @@ export default function TrendingNews() {
                   className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                 />
               </div>
-              <div className="mt-4">
-                <h3 className="text-white text-4xl font-bold leading-tight hover:text-yellow-300 transition-colors duration-300">
+              <div className="mt-3 sm:mt-4">
+                <h3 className="text-white text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight hover:text-yellow-300 transition-colors duration-300">
                   Rise Of The Robots Raises A Big Question: What Will Workers
                   Do?
                 </h3>
@@ -85,11 +85,11 @@ export default function TrendingNews() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-auto">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             {sideArticles.map((article) => (
               <div key={article.id} className="flex flex-col h-full">
                 <Link href={article.href} className="block">
-                  <div className="relative h-[165px] rounded-md overflow-hidden">
+                  <div className="relative h-36 sm:h-40 md:h-32 lg:h-36 rounded-md overflow-hidden">
                     <Image
                       src={article.imageUrl}
                       alt={article.imageAlt}
@@ -97,13 +97,13 @@ export default function TrendingNews() {
                       className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                     />
                   </div>
-                  <div className="mt-3">
-                    <h3 className="text-white font-bold leading-tight hover:text-yellow-300 transition duration-300">
+                  <div className="mt-2">
+                    <h3 className="text-white text-sm sm:text-base font-bold leading-tight hover:text-yellow-300 transition duration-300">
                       {article.title}
                     </h3>
                   </div>
                 </Link>
-                <div className="text-white/80 text-xs mt-3">
+                <div className="text-white/80 text-xs mt-1">
                   {article.date}
                 </div>
               </div>

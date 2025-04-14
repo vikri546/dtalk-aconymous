@@ -13,7 +13,7 @@ export default function SecondNavbar() {
   };
 
   return (
-    <nav className="absolute w-full z-40">
+    <nav className="absolute w-full z-40 hidden md:block">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="text-sm text-black-600 dark:text-black-400">
@@ -25,7 +25,7 @@ export default function SecondNavbar() {
             })}
           </div>
 
-          <div className="hidden md:flex space-x-10">
+          <div className="flex space-x-10">
             <Link
               href="/kategori1"
               className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"

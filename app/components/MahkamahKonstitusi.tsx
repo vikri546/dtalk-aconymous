@@ -53,7 +53,7 @@ export default function MahkamahKonstitusi() {
           <div className="md:w-2/3 mb-6 md:mb-0 md:pr-6 px-2">
             <div className="relative bottom-0 left-0 right-0">
               <Link href="#">
-                <div className="relative w-full h-[500px]">
+                <div className="relative w-full h-[350px] sm:h-[400px] lg:h-[500px]">
                   <Image
                     src={Mahkamah}
                     alt="Mahkamah Konstitusi"
@@ -61,7 +61,7 @@ export default function MahkamahKonstitusi() {
                     className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75"
                   />
                 </div>
-                <h1 className="text-5xl font-black leading-tight max-w-full break-words mt-4 text-black hover:text-yellow-300 transition duration-300">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight max-w-full break-words mt-4 text-black hover:text-yellow-300 transition duration-300">
                   Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!
                 </h1>
               </Link>
