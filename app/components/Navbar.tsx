@@ -13,7 +13,6 @@ import { FiSearch, FiMoon, FiSun, FiMenu } from "react-icons/fi";
 export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -21,10 +20,6 @@ export default function Navbar() {
 
   const toggleSearch = () => {
     setShowSearch(!showSearch);
-  };
-
-  const toggleMobileMenu = () => {
-    setShowMobileMenu(!showMobileMenu);
   };
 
   return (

@@ -5,6 +5,7 @@ import MahkamahKonstitusi from "./components/MahkamahKonstitusi";
 import MobilePhones from "./components/MobilePhones";
 import ScienceInnovation from "./components/ScienceInnovation";
 import TrendingNow from "./components/TrendingNow";
+import TechnologyNews from "./components/TechnologyNews";
 
 export default function Layout() {
   return (
@@ -16,6 +17,7 @@ export default function Layout() {
       <MobilePhones />
       <ScienceInnovation />
       <TrendingNow />
+      <TechnologyNews />
     </div>
   );
 }
