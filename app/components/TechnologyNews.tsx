@@ -3,17 +3,24 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import Flower from "../images/flower.png";
 import TechnologyOne from "../images/technology news/image1.png";
 import TechnologyTwo from "../images/technology news/image2.png";
 import TechnologyThree from "../images/technology news/image3.png";
 import TechnologyFour from "../images/technology news/image4.png";
+import TechnologyFive from "../images/technology news/image5.png";
+import TechnologySix from "../images/technology news/image6.png";
 import GamingOne from "../images/technology news/gaming news/gaming1.png";
 import GamingTwo from "../images/technology news/gaming news/gaming2.png";
 import GamingThree from "../images/technology news/gaming news/gaming3.png";
 import GamingFour from "../images/technology news/gaming news/gaming4.png";
 
 export default function TechnologyNews() {
+  const [loadedItems, setLoadedItems] = useState(4);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showButton, setShowButton] = useState(true);
+
   const newsFeedItems = [
     {
       category: "GAMING VR",
@@ -43,13 +50,31 @@ export default function TechnologyNews() {
       imageAlt: "Person holding flower",
     },
     {
-      category: "GAMING VR",
+      category: "HDR CAMERA",
       title:
-        "HTC Launches a Vive VR Headset Into Space for Astronaut Mental Health",
-      date: "March 10, 2022",
-      views: 2,
+        "Simple Tips and Tricks to Take Care of Your Expensive DSLR Camera",
+      date: "March 12, 2021",
+      views: 3,
       image: TechnologyFour,
       imageAlt: "Four women walking",
+    },
+    // Additional items that will be loaded when "Load More" is clicked
+    {
+      category: "TECHNOLOGY",
+      title: "4 Collaboration Security Mistakes Companies Are Still Making",
+      date: "March 19, 2021",
+      views: 1,
+      image: TechnologyFive, // Reusing image for example
+      imageAlt: "AI medical illustration",
+    },
+    {
+      category: "PHONE ACCESSORIES",
+      title:
+        "The Best Wireless Earbuds for the Samsung Galaxy S25 & Other Models in 2024",
+      date: "March 16, 2021",
+      views: 1,
+      image: TechnologySix, // Reusing image for example
+      imageAlt: "Industrial robots",
     },
   ];
 
@@ -76,49 +101,72 @@ export default function TechnologyNews() {
     },
   ];
 
+  const loadMore = () => {
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setLoadedItems((prev) => {
+        const newValue = Math.min(prev + 2, newsFeedItems.length);
+
+        // Hide button when all items are loaded
+        if (newValue >= newsFeedItems.length) {
+          setShowButton(false);
+        }
+
+        return newValue;
+      });
+      setIsLoading(false);
+    }, 1000);
+  };
+
   return (
-    <div className="max-w-6xl mx-auto bg-gray-50">
+    <div className="w-full mx-auto bg-gray-50">
       <Head>
         <title>Tech & Gaming News</title>
         <meta name="description" content="Latest technology and gaming news" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Add viewport meta tag for responsive design */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
         {/* Top Section - Tech News and Gaming News */}
-        <div className="flex flex-col md:flex-row gap-8 mb-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mb-8">
           {/* Technology News Section with News Feed */}
-          <div className="md:w-7/12">
-            <h2 className="text-2xl font-bold mb-2">Technology News</h2>
-            <div className="w-full h-[3px] bg-gray-200 my-3">
+          <div className="w-full lg:w-7/12">
+            <h2 className="text-xl sm:text-2xl font-bold mb-2">
+              Technology News
+            </h2>
+            <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3">
               <div className="w-10 h-[3px] bg-yellow-500"></div>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <div className="overflow-hidden">
-                <div className="relative h-96 w-full rounded-md overflow-hidden">
+                <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-sm overflow-hidden">
                   <Image
                     src={Flower}
                     alt="Flowers in vase"
                     layout="fill"
                     objectFit="cover"
                     className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                    priority
                   />
                 </div>
-                <div className="p-2">
+                <div>
                   <Link href="#">
-                    <h1 className="text-4xl font-bold mb-4 text-black hover:text-yellow-500 transition duration-300">
-                      Here's What Apple Really Means When It Says "Shot On
-                      iPhone"
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-black hover:text-yellow-500 transition duration-300">
+                      Here&apos;s What Apple Really Means When It Says
+                      &ldquo;Shot On iPhone&rdquo;
                     </h1>
                   </Link>
-                  <div className="flex items-center text-gray-600 text-sm">
+                  <div className="flex flex-wrap items-center text-gray-600 text-sm">
                     <Link
                       href="/author/aco"
-                      className="hover:text-yellow-300 transition duration-300"
+                      className="hover:text-yellow-500 transition duration-300"
                     >
                       Aco
-                    </Link>{" "}
+                    </Link>
                     <span className="mx-2">•</span>
                     <span>November 19, 2022</span>
                   </div>
@@ -126,33 +174,31 @@ export default function TechnologyNews() {
               </div>
             </div>
 
-            {/* News Feed Items */}
-            {newsFeedItems.map((item, index) => (
+            {/* News Feed Items - Modified to keep side-by-side layout on all devices */}
+            {newsFeedItems.slice(0, loadedItems).map((item, index) => (
               <div
                 key={index}
                 className={`${
-                  index !== newsFeedItems.length - 1
-                    ? "border-b border-gray-200"
-                    : ""
-                } pb-6 mb-6`}
+                  index !== loadedItems - 1 ? "border-b border-gray-200" : ""
+                } py-2 pb-4 sm:pb-6 mb-4 sm:mb-6`}
               >
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="md:w-8/12">
-                    <div className="uppercase text-yellow-500 font-bold text-sm mb-2">
+                <div className="flex flex-row gap-3 sm:gap-6">
+                  <div className="w-8/12">
+                    <div className="uppercase text-yellow-500 font-bold text-xs sm:text-sm mb-3">
                       {item.category}
                     </div>
                     <Link
                       href="#"
-                      className="text-2xl font-bold mb-3 text-black hover:text-yellow-500 transition duration-300"
+                      className="text-black text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-tight hover:text-yellow-300 transition duration-300 line-clamp-3 sm:line-clamp-none"
                     >
                       {item.title}
                     </Link>
-                    <div className="flex items-center text-gray-500 text-sm py-2">
+                    <div className="flex items-center text-gray-500 text-xs sm:text-sm py-3">
                       <span>{item.date}</span>
-                      <span className="mx-4 flex items-center">
+                      <span className="mx-2 sm:mx-4 flex items-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 mr-1"
+                          className="h-3 w-3 sm:h-4 sm:w-4 mr-1"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -174,13 +220,12 @@ export default function TechnologyNews() {
                       </span>
                     </div>
                   </div>
-                  <Link href="#" className="md:w-4/12">
-                    <div className="relative h-36 w-full rounded-md overflow-hidden">
+                  <Link href="#" className="w-4/12">
+                    <div className="relative h-24 xs:h-28 sm:h-32 md:h-28 lg:h-32 w-full rounded-md overflow-hidden">
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
                         className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                       />
                     </div>
@@ -188,32 +233,64 @@ export default function TechnologyNews() {
                 </div>
               </div>
             ))}
-            <div className="text-center">
-              <button className="bg-yellow-500 hover:bg-black text-white font-bold py-2 px-20 rounded-full mt-4 transition duration-500">
-                Load More
-              </button>
-            </div>
+            {loadedItems < newsFeedItems.length && showButton && (
+              <div className="text-center">
+                <button
+                  onClick={loadMore}
+                  disabled={isLoading}
+                  className={`bg-yellow-500 hover:bg-black text-white font-bold py-2 px-6 sm:px-12 md:px-20 rounded-full mt-4 transition-all duration-500 ${
+                    isLoading ? "opacity-80" : ""
+                  }`}
+                >
+                  <span className="flex items-center justify-center">
+                    Load More
+                    {isLoading && (
+                      <svg
+                        className="animate-spin ml-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                    )}
+                  </span>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Gaming News Section */}
-          <div className="md:w-5/12 flex-shrink-0">
-            <div className="rounded-2xl border-2 border-yellow-500 overflow-hidden">
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2">
+          <div className="w-full lg:w-5/12 mt-8 lg:mt-0">
+            <div className="rounded-xl sm:rounded-2xl border-2 border-yellow-500 overflow-hidden">
+              <div className="p-4 sm:p-6">
+                <h2 className="text-xl sm:text-2xl font-bold mb-2">
                   <div>Gaming News</div>
                 </h2>
-                <div className="w-full h-[3px] bg-gray-200 my-3">
+                <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3">
                   <div className="w-10 h-[3px] bg-yellow-500"></div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
                   {gamingNewsItems.map((item, index) => (
-                    <div key={index} className="mb-6">
+                    <div key={index} className="mb-4 sm:mb-6">
                       <Link
                         href="#"
-                        className="rounded overflow-hidden shadow-md mb-3"
+                        className="block rounded overflow-hidden shadow-md mb-2 sm:mb-3"
                       >
-                        <div className="relative h-40 w-full rounded-md overflow-hidden">
+                        <div className="relative h-32 w-full rounded-md overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.alt}
@@ -224,7 +301,7 @@ export default function TechnologyNews() {
                         </div>
                       </Link>
                       <Link href="#" className="group">
-                        <h3 className="font-bold text-xl leading-tight group-hover:text-yellow-500 transition-colors duration-300 line-clamp-3">
+                        <h3 className="font-bold text-sm sm:text-base md:text-lg leading-tight group-hover:text-yellow-500 transition-colors duration-300 line-clamp-3">
                           {item.title}
                         </h3>
                       </Link>

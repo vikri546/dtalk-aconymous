@@ -12,10 +12,10 @@ export default function FirstSection() {
   return (
     <div className="w-full py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-wrap justify-center items-center gap-2">
+        <div className="flex flex-wrap justify-center items-center gap-1">
           <Link
             href="/"
-            className="relative w-[75px] h-[75px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
+            className="relative w-[70px] h-[70px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
           >
             <Image
               src={Circle1}
@@ -26,7 +26,7 @@ export default function FirstSection() {
           </Link>
           <Link
             href="/"
-            className="relative w-[75px] h-[75px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
+            className="relative w-[70px] h-[70px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
           >
             <Image
               src={Circle2}
@@ -37,7 +37,7 @@ export default function FirstSection() {
           </Link>
           <Link
             href="/"
-            className="relative w-[75px] h-[75px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
+            className="relative w-[70px] h-[70px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
           >
             <Image
               src={Circle3}
@@ -48,7 +48,7 @@ export default function FirstSection() {
           </Link>
           <Link
             href="/"
-            className="relative w-[75px] h-[75px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
+            className="relative w-[70px] h-[70px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
           >
             <Image
               src={Circle4}
@@ -59,7 +59,7 @@ export default function FirstSection() {
           </Link>
           <Link
             href="/"
-            className="relative w-[75px] h-[75px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
+            className="relative w-[70px] h-[70px] rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
           >
             <Image
               src={Circle5}
