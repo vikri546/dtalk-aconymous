@@ -80,7 +80,7 @@ export default function TechnologyNews() {
 
   const gamingNewsItems = [
     {
-      title: "Soundcore VR Gaming Earbuds Designed for Meta Quest 3",
+      title: "Soundcore VR Gaming Earbuds Designed for Meta Quest 2 Launched",
       image: GamingOne,
       alt: "Person in corn field with VR headset",
     },
@@ -90,12 +90,12 @@ export default function TechnologyNews() {
       alt: "People sitting by water",
     },
     {
-      title: "A Piece of The Wrecked 1986 Challenger Space Shuttle",
+      title: "A Piece of The Wrecked 1986 Challenger Space Shuttle was Found",
       image: GamingThree,
       alt: "Green sneakers",
     },
     {
-      title: "Security Cameras Make Us Feel Safe, but Are They Worth It?",
+      title: "Security Cameras Make Us Feel Safe, but Are They Worth the Invasion?",
       image: GamingFour,
       alt: "Woman with flowers",
     },
@@ -131,7 +131,7 @@ export default function TechnologyNews() {
 
       <main className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
         {/* Top Section - Tech News and Gaming News */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mb-8">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 mb-8">
           {/* Technology News Section with News Feed */}
           <div className="w-full lg:w-7/12">
             <h2 className="text-xl sm:text-2xl font-bold mb-2">
@@ -189,7 +189,7 @@ export default function TechnologyNews() {
                     </div>
                     <Link
                       href="#"
-                      className="text-black text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-tight hover:text-yellow-300 transition duration-300 line-clamp-3 sm:line-clamp-none"
+                      className="text-black text-lg md:text-xl lg:text-2xl font-bold leading-tight hover:text-yellow-300 transition duration-300 line-clamp-3 sm:line-clamp-none"
                     >
                       {item.title}
                     </Link>
@@ -221,7 +221,7 @@ export default function TechnologyNews() {
                     </div>
                   </div>
                   <Link href="#" className="w-4/12">
-                    <div className="relative h-24 xs:h-28 sm:h-32 md:h-28 lg:h-32 w-full rounded-md overflow-hidden">
+                    <div className="relative h-24 xs:h-32 sm:h-40 lg:h-32 w-full rounded-md overflow-hidden">
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
@@ -238,7 +238,7 @@ export default function TechnologyNews() {
                 <button
                   onClick={loadMore}
                   disabled={isLoading}
-                  className={`bg-yellow-500 hover:bg-black text-white font-bold py-2 px-6 sm:px-12 md:px-20 rounded-full mt-4 transition-all duration-500 ${
+                  className={`bg-yellow-500 hover:bg-black text-white font-bold py-2 px-10 sm:px-12 md:px-20 rounded-full mt-4 transition-all duration-500 ${
                     isLoading ? "opacity-80" : ""
                   }`}
                 >
@@ -273,24 +273,24 @@ export default function TechnologyNews() {
           </div>
 
           {/* Gaming News Section */}
-          <div className="w-full lg:w-5/12 mt-8 lg:mt-0">
+          <div className="w-full lg:w-5/12 mx-auto mt-8 lg:mt-0">
             <div className="rounded-xl sm:rounded-2xl border-2 border-yellow-500 overflow-hidden">
-              <div className="p-4 sm:p-6">
+              <div className="p-6 gap-12">
                 <h2 className="text-xl sm:text-2xl font-bold mb-2">
                   <div>Gaming News</div>
                 </h2>
-                <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3">
+                <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3 mb-4 sm:mb-6">
                   <div className="w-10 h-[3px] bg-yellow-500"></div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   {gamingNewsItems.map((item, index) => (
                     <div key={index} className="mb-4 sm:mb-6">
                       <Link
                         href="#"
                         className="block rounded overflow-hidden shadow-md mb-2 sm:mb-3"
                       >
-                        <div className="relative h-32 w-full rounded-md overflow-hidden">
+                        <div className="relative h-56 xs:h-64 sm:h-72 md:h-64 lg:h-32 w-full rounded-md overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.alt}
@@ -301,7 +301,7 @@ export default function TechnologyNews() {
                         </div>
                       </Link>
                       <Link href="#" className="group">
-                        <h3 className="font-bold text-sm sm:text-base md:text-lg leading-tight group-hover:text-yellow-500 transition-colors duration-300 line-clamp-3">
+                        <h3 className="font-bold text-base sm:text-base md:text-lg leading-tight group-hover:text-yellow-500 transition-colors duration-300 line-clamp-3">
                           {item.title}
                         </h3>
                       </Link>
