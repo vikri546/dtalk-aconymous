@@ -41,7 +41,7 @@ export default function MobilePhones() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-2">
         <h1 className="text-xl font-bold">Mobile Phones</h1>
         <Link
           href="/mobiles"

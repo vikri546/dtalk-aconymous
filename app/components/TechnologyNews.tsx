@@ -58,7 +58,7 @@ export default function TechnologyNews() {
       image: TechnologyFour,
       imageAlt: "Four women walking",
     },
-    // Additional items that will be loaded when "Load More" is clicked
+    // Load More Items
     {
       category: "TECHNOLOGY",
       title: "4 Collaboration Security Mistakes Companies Are Still Making",
@@ -108,7 +108,7 @@ export default function TechnologyNews() {
       setLoadedItems((prev) => {
         const newValue = Math.min(prev + 2, newsFeedItems.length);
 
-        // Hide button when all items are loaded
+        // Hide Button if all items are loaded
         if (newValue >= newsFeedItems.length) {
           setShowButton(false);
         }
@@ -120,24 +120,21 @@ export default function TechnologyNews() {
   };
 
   return (
-    <div className="w-full mx-auto bg-gray-50">
+    <div className="max-w-6xl mx-auto bg-gray-50">
       <Head>
         <title>Tech & Gaming News</title>
         <meta name="description" content="Latest technology and gaming news" />
         <link rel="icon" href="/favicon.ico" />
-        {/* Add viewport meta tag for responsive design */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <main className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-8">
-        {/* Top Section - Tech News and Gaming News */}
+      <main className="w-full mx-auto px-4 sm:px-6 py-4 sm:py-8">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 mb-8">
-          {/* Technology News Section with News Feed */}
-          <div className="w-full lg:w-7/12">
+          <div className="w-full lg:w-8/12">
             <h2 className="text-xl sm:text-2xl font-bold mb-2">
               Technology News
             </h2>
-            <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3">
+            <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3 mb-4 sm:mb-6">
               <div className="w-10 h-[3px] bg-yellow-500"></div>
             </div>
 
@@ -153,7 +150,7 @@ export default function TechnologyNews() {
                     priority
                   />
                 </div>
-                <div>
+                <div className="mt-2 sm:mt-4">
                   <Link href="#">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-black hover:text-yellow-500 transition duration-300">
                       Here&apos;s What Apple Really Means When It Says
@@ -174,13 +171,13 @@ export default function TechnologyNews() {
               </div>
             </div>
 
-            {/* News Feed Items - Modified to keep side-by-side layout on all devices */}
+            {/* News Feed Items */}
             {newsFeedItems.slice(0, loadedItems).map((item, index) => (
               <div
                 key={index}
                 className={`${
                   index !== loadedItems - 1 ? "border-b border-gray-200" : ""
-                } py-2 pb-4 sm:pb-6 mb-4 sm:mb-6`}
+                } py-2 pb-2 sm:pb-4 mb-2 sm:mb-4`}
               >
                 <div className="flex flex-row gap-3 sm:gap-6">
                   <div className="w-8/12">
@@ -273,7 +270,7 @@ export default function TechnologyNews() {
           </div>
 
           {/* Gaming News Section */}
-          <div className="w-full lg:w-5/12 mx-auto mt-8 lg:mt-0">
+          <div className="w-11/12 lg:w-5/12 mx-auto mt-8 lg:mt-0">
             <div className="rounded-xl sm:rounded-2xl border-2 border-yellow-500 overflow-hidden">
               <div className="p-6 gap-12">
                 <h2 className="text-xl sm:text-2xl font-bold mb-2">
@@ -290,7 +287,7 @@ export default function TechnologyNews() {
                         href="#"
                         className="block rounded overflow-hidden shadow-md mb-2 sm:mb-3"
                       >
-                        <div className="relative h-56 xs:h-64 sm:h-72 md:h-64 lg:h-32 w-full rounded-md overflow-hidden">
+                        <div className="relative h-56 xs:h-64 sm:h-72 md:h-64 lg:h-28 w-full rounded-md overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.alt}
