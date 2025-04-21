@@ -120,7 +120,7 @@ export default function TechnologyNews() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto bg-gray-50">
+    <div className="max-w-6xl mx-auto">
       <Head>
         <title>Tech & Gaming News</title>
         <meta name="description" content="Latest technology and gaming news" />

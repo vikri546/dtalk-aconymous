@@ -6,6 +6,9 @@ import MobilePhones from "./components/MobilePhones";
 import ScienceInnovation from "./components/ScienceInnovation";
 import TrendingNow from "./components/TrendingNow";
 import TechnologyNews from "./components/TechnologyNews";
+import EditorsPicks from "./components/EditorPick";
+import Subscribe from "./components/Subscribes";
+import Footer from "./components/Footter";
 
 export default function Layout() {
   return (
@@ -18,6 +21,9 @@ export default function Layout() {
       <ScienceInnovation />
       <TrendingNow />
       <TechnologyNews />
+      <EditorsPicks />
+      <Subscribe />
+      <Footer />
     </div>
   );
 }
