@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-12">
       <div className="container mx-auto flex flex-col items-center">
-        <div className="flex space-x-2 mb-8">
+        <div className="flex space-x-3 mb-8">
           <Link href="#" className="bg-zinc-800 p-3 rounded-full hover:bg-zinc-700 transition-colors duration-300">
             <FaFacebookF className="text-white" />
           </Link>

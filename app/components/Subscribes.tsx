@@ -18,21 +18,21 @@ export default function Subscribe() {
       id: 1,
       image: MostPopular1,
       title: "Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!",
-      date: "January 11, 2020",
+      date: "Januari 11, 2020",
       views: 40
     },
     {
       id: 2,
       image: MostPopular2,
       title: "CarPlay Concept Shows Off a Modular UI Inspired by Next-Gen Design",
-      date: "March 15, 2020",
+      date: "Maret 15, 2020",
       views: 22
     },
     {
       id: 3,
       image: MostPopular3,
       title: "Bodily Harms: How AI and Biometrics Curtail Human Rights",
-      date: "March 15, 2020",
+      date: "Maret 15, 2020",
       views: 7
     }
   ];
@@ -49,14 +49,14 @@ export default function Subscribe() {
       id: 2,
       image: OurPicks2,
       title: "HTC Launches a Vive VR Headset Into Space for Astronaut Mental Health",
-      date: "March 10, 2022",
+      date: "Maret 10, 2022",
       views: 0
     },
     {
       id: 3,
       image: OurPicks3,
       title: "Samsung is Developing Bright MicroLED on Displays for AR Headsets",
-      date: "March 10, 2022",
+      date: "Maret 10, 2022",
       views: 0
     }
   ];
@@ -173,7 +173,7 @@ export default function Subscribe() {
           
           {/* Subscribe Section */}
           <div className="w-full mx-auto md:w-1/3 py-6 md:py-0 px-4 lg:px-0">
-            <div className="bg-black p-10 rounded-lg shadow-md">
+            <div className="bg-black border border-zinc-800 p-10 rounded-lg shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-center">Subscribe to Updates</h2>
               
               <p className="text-center text-sm text-gray-400 mb-8">
@@ -192,7 +192,7 @@ export default function Subscribe() {
                 
                 <button
                   type="submit"
-                  className="w-full p-3 bg-yellow-500 hover:bg-black text-white transition duration-300 font-bold text-sm uppercase"
+                  className="w-full p-3 bg-yellow-500 hover:bg-zinc-800 text-white transition duration-300 font-bold text-sm uppercase"
                 >
                   Subscribe
                 </button>

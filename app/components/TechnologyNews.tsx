@@ -26,7 +26,7 @@ export default function TechnologyNews() {
       category: "GAMING VR",
       title:
         "HTC Launches a Vive VR Headset Into Space for Astronaut Mental Health",
-      date: "March 10, 2022",
+      date: "Maret 10, 2022",
       views: 2,
       image: TechnologyOne,
       imageAlt: "Four women walking",
@@ -35,7 +35,7 @@ export default function TechnologyNews() {
       category: "PHONES",
       title:
         "Samsung is Developing Bright MicroLED on Displays for AR Headsets",
-      date: "March 10, 2022",
+      date: "Maret 10, 2022",
       views: 1,
       image: TechnologyTwo,
       imageAlt: "Person with sunglasses",
@@ -44,7 +44,7 @@ export default function TechnologyNews() {
       category: "GADGETS",
       title:
         "The Best Early Black Friday Deals on Gadgets, Laptops and Accessories",
-      date: "March 10, 2022",
+      date: "Maret 10, 2022",
       views: 1,
       image: TechnologyThree,
       imageAlt: "Person holding flower",
@@ -53,7 +53,7 @@ export default function TechnologyNews() {
       category: "HDR CAMERA",
       title:
         "Simple Tips and Tricks to Take Care of Your Expensive DSLR Camera",
-      date: "March 12, 2021",
+      date: "Maret 12, 2021",
       views: 3,
       image: TechnologyFour,
       imageAlt: "Four women walking",
@@ -62,7 +62,7 @@ export default function TechnologyNews() {
     {
       category: "TECHNOLOGY",
       title: "4 Collaboration Security Mistakes Companies Are Still Making",
-      date: "March 19, 2021",
+      date: "Maret 19, 2021",
       views: 1,
       image: TechnologyFive, // Reusing image for example
       imageAlt: "AI medical illustration",
@@ -71,7 +71,7 @@ export default function TechnologyNews() {
       category: "PHONE ACCESSORIES",
       title:
         "The Best Wireless Earbuds for the Samsung Galaxy S25 & Other Models in 2024",
-      date: "March 16, 2021",
+      date: "Maret 16, 2021",
       views: 1,
       image: TechnologySix, // Reusing image for example
       imageAlt: "Industrial robots",
