@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiSearch, FiMoon, FiSun, FiMenu } from "react-icons/fi";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
@@ -15,6 +15,10 @@ import Hot3 from "../images/subscribes/picks3.png";
 export default function SecondNavbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isSticky, setIsSticky] = useState(false);
 
   const hotArticles = [
     {
@@ -42,9 +46,59 @@ export default function SecondNavbar() {
     },
   ];
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDarkMode(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      const scrollThreshold = 10;
+      
+      if (currentScrollY > 50) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+      
+      if (currentScrollY > lastScrollY + scrollThreshold && isSticky) {
+        // Scrolling down
+        setVisible(false);
+      } else if (currentScrollY < lastScrollY - scrollThreshold || currentScrollY <= 0) {
+        // Scrolling up or at the top
+        setVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY, isSticky]);
+
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle("dark");
   };
 
   const toggleMenu = () => {
@@ -57,10 +111,26 @@ export default function SecondNavbar() {
     }
   };
 
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    // Prevent scrolling when search is open
+    if (!isSearchOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  };
+
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="absolute w-full z-40 hidden md:block">
+      <nav 
+        className={`fixed w-full z-40 hidden md:block transition-all duration-300 ${
+          isSticky 
+            ? `fixed ${visible ? 'translate-y-0' : '-translate-y-full'} bg-white dark:bg-zinc-900 top-0 shadow-md`
+            : 'absolute bg-transparent'
+        }`}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="text-sm text-black-600 dark:text-black-400">
@@ -74,25 +144,25 @@ export default function SecondNavbar() {
 
             <div className="flex space-x-10">
               <Link
-                href="/kategori1"
+                href="/"
                 className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 DIGITAL
               </Link>
               <Link
-                href="/kategori2"
+                href="/"
                 className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 EKBIS
               </Link>
               <Link
-                href="/kategori3"
+                href="/"
                 className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 HUKUM
               </Link>
               <Link
-                href="/kategori4"
+                href="/"
                 className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 POLITIK
@@ -100,7 +170,10 @@ export default function SecondNavbar() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <button className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300">
+              <button
+                onClick={toggleSearch}
+                className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+              >
                 <FiSearch size={20} />
               </button>
               <button
@@ -119,6 +192,33 @@ export default function SecondNavbar() {
           </div>
         </div>
       </nav>
+
+      {/* Search Overlay */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
+          <button
+            onClick={toggleSearch}
+            className="absolute top-4 right-4 text-white focus:outline-none"
+            aria-label="Close Search"
+          >
+            <IoClose size={24} />
+          </button>
+
+          <div className="w-full max-w-xl px-4">
+            <div className="relative">
+              <input
+                type="text"
+                className="w-full bg-transparent border-b border-gray-600 text-white text-2xl font-semibold py-2 focus:outline-none text-left placeholder-white"
+                placeholder="Search..."
+                autoFocus
+              />
+            </div>
+            <p className="text-gray-400 text-xs mt-2 text-left">
+              Type above and press Enter to search. Press Esc to cancel
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Overlay for sidebar */}
       {isMenuOpen && (

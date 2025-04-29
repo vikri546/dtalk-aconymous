@@ -64,7 +64,7 @@ export default function FirstSection() {
   }, []);
 
   return (
-    <div className="w-full py-20">
+    <div className="w-full py-8 sm:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:left-5 relative">
         <div className="flex items-center justify-center">
           {showLeftArrow && (

@@ -10,9 +10,9 @@ import EditorsPicks from "./components/EditorPick";
 import Subscribe from "./components/Subscribes";
 import Footer from "./components/Footter";
 
-export default function Layout() {
+export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-white dark:bg-zinc-900 text-black dark:text-white transition-opacity duration-300">
       <Navbar />
       <SecondNavbar />
       <CircleImage />

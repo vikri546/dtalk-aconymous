@@ -47,7 +47,7 @@ export default function TrendingNews() {
 
   return (
     <div className="w-full max-w-6xl mx-auto py-4 sm:px-6">
-      <div className="bg-gradient-to-b from-amber-400 to-black rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-10">
+      <div className="bg-gradient-to-b from-amber-400 to-black rounded-none sm:rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-10">
         <div className="flex items-center justify-center mb-4 sm:mb-6 md:mb-8">
           <div className="h-[2px] bg-yellow-400 w-96"></div>
           <h2 className="text-center text-white text-xl sm:text-2xl md:text-3xl font-bold mx-2 sm:mx-4 whitespace-nowrap">

@@ -88,14 +88,14 @@ const EditorsPicks = () => {
                   className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
                 />
               </div>
-              <h2 className="text-xl font-bold mb-2 text-black hover:text-yellow-500 transition duration-300 line-clamp-2">
+              <h2 className="text-xl font-bold mb-2 text-black dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 transition duration-300 line-clamp-2">
                 {item.title}
               </h2>
             </Link>
             <div className="flex items-center text-gray-500 text-sm">
               <Link
                 href="/"
-                className="hover:text-yellow-300 transition duration-300"
+                className="dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300"
               >
                 {item.source}
               </Link>
@@ -119,7 +119,7 @@ const EditorsPicks = () => {
                   className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                 />
               </div>
-              <h3 className="text-base font-bold text-black hover:text-yellow-400 transition duration-300 leading-tight mt-2">
+              <h3 className="text-base font-bold text-black dark:text-white hover:text-yellow-400 dark:hover:text-yellow-500 transition duration-300 leading-tight mt-2">
                 {item.title}
               </h3>
             </Link>

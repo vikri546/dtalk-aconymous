@@ -17,7 +17,7 @@ export default function MahkamahKonstitusi() {
       date: "Maret 15, 2020",
       views: 4,
       image: SecondImage,
-      link: "/gadgets/philips-headphone-deal",
+      link: "/",
     },
     {
       category: "DRONES",
@@ -25,7 +25,7 @@ export default function MahkamahKonstitusi() {
       date: "Januari 13, 2020",
       views: 2,
       image: SixImage,
-      link: "/drones/photography-drone-review",
+      link: "/",
     },
     {
       category: "GADGETS",
@@ -33,7 +33,7 @@ export default function MahkamahKonstitusi() {
       date: "Januari 12, 2020",
       views: 2,
       image: SevenImage,
-      link: "/gadgets/black-friday-smartwatch-deals",
+      link: "/",
     },
     {
       category: "JUST IN",
@@ -42,12 +42,12 @@ export default function MahkamahKonstitusi() {
       date: "Januari 11, 2020",
       views: 4,
       image: EightImage,
-      link: "/tech/noise-canceling-earbuds-battery-life",
+      link: "/",
     },
   ];
 
   return (
-    <div className="w-full py-2">
+    <div className="w-full py-4 sm:py-2">
       <div className="max-w-6xl mx-auto px-4 sm:px-4 lg:px-6">
         <div className="flex flex-col md:flex-row md:space-x-4 justify-between">
           <div className="md:w-2/3 mb-6 md:mb-0 md:pr-6 px-2">
@@ -61,14 +61,14 @@ export default function MahkamahKonstitusi() {
                     className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75"
                   />
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight max-w-full break-words mt-4 text-black hover:text-yellow-300 transition duration-300">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight max-w-full break-words mt-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300">
                   Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!
                 </h1>
               </Link>
               <div className="mt-3 text-gray-700 text-sm">
                 <Link
                   href="/author/aco"
-                  className="hover:text-yellow-300 transition duration-300"
+                  className="dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300"
                 >
                   Aco
                 </Link>{" "}
@@ -80,7 +80,7 @@ export default function MahkamahKonstitusi() {
           <div className="md:w-1/3 px-2 w-full">
             <div className="mb-4 flex items-center w-full">
               <h2 className="text-yellow-500 text-xl font-bold mr-2">News</h2>
-              <span className="text-gray-800 text-xl font-bold flex-grow">
+              <span className="text-gray-800 dark:text-white text-xl font-bold flex-grow">
                 Just In
               </span>
             </div>
@@ -99,7 +99,7 @@ export default function MahkamahKonstitusi() {
                       {item.category}
                     </div>
                     <Link href={item.link}>
-                      <h3 className="text-base text-black hover:text-yellow-300 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
+                      <h3 className="text-base text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
                         {item.title}
                       </h3>
                     </Link>

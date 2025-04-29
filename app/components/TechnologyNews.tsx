@@ -152,7 +152,7 @@ export default function TechnologyNews() {
                 </div>
                 <div className="mt-2 sm:mt-4">
                   <Link href="#">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-black hover:text-yellow-500 transition duration-300">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300">
                       Here&apos;s What Apple Really Means When It Says
                       &ldquo;Shot On iPhone&rdquo;
                     </h1>
@@ -160,7 +160,7 @@ export default function TechnologyNews() {
                   <div className="flex flex-wrap items-center text-gray-600 text-sm">
                     <Link
                       href="/author/aco"
-                      className="hover:text-yellow-500 transition duration-300"
+                      className="dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 transition duration-300"
                     >
                       Aco
                     </Link>
@@ -186,7 +186,7 @@ export default function TechnologyNews() {
                     </div>
                     <Link
                       href="#"
-                      className="text-black text-lg md:text-xl lg:text-2xl font-bold leading-tight hover:text-yellow-300 transition duration-300 line-clamp-3 sm:line-clamp-none"
+                      className="text-black dark:text-white text-lg md:text-xl lg:text-2xl font-bold leading-tight hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300 line-clamp-3 sm:line-clamp-none"
                     >
                       {item.title}
                     </Link>

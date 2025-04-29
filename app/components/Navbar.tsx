@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LogoLight from "../images/dtalk-light-theme-logo-retina.png";
@@ -16,10 +16,72 @@ export default function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [navVisible, setNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth <= 640) {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY < lastScrollY || currentScrollY <= 0) {
+          setNavVisible(true);
+        }
+        else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+          setNavVisible(false);
+          if (isMenuOpen) {
+            setIsMenuOpen(false);
+            document.body.style.overflow = "auto";
+          }
+        }
+
+        setLastScrollY(currentScrollY);
+      } else {
+        setNavVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Check screen size on resize
+    const handleResize = () => {
+      if (window.innerWidth > 640) {
+        setNavVisible(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [lastScrollY, isMenuOpen]);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle("dark");
   };
 
   const toggleSearch = () => {
@@ -42,24 +104,29 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full border-b border-black-200 dark:border-black-800">
+      <nav
+        ref={navbarRef}
+        className={`w-full border-b border-black-200 dark:border-black-800 dark:bg-black sm:relative fixed top-0 left-0 right-0 z-30 transition-transform duration-300 ${
+          navVisible ? "translate-y-0" : "-translate-y-full sm:translate-y-0"
+        } bg-white dark:bg-black`}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <div className="flex justify-between h-16 items-center">
             <div className="hidden sm:flex space-x-2 pt-6">
               <Link
-                href="https://facebook.com"
+                href="#"
                 className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300 p-2 border rounded-full flex items-center justify-center"
               >
                 <FaFacebookF size={20} />
               </Link>
               <Link
-                href="https://twitter.com"
+                href="#"
                 className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300 p-2 border rounded-full flex items-center justify-center"
               >
                 <FaXTwitter size={20} />
               </Link>
               <Link
-                href="https://instagram.com"
+                href="#"
                 className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300 p-2 border rounded-full flex items-center justify-center"
               >
                 <IoLogoInstagram size={20} />
@@ -67,11 +134,19 @@ export default function Navbar() {
             </div>
 
             <div className="flex-shrink-0 pt-8">
-              <Link href="/" className="flex items-center justify-center">
+              <Link
+                href="https://dtalk-aconymous.vercel.app/"
+                className="flex items-center justify-center"
+              >
                 <Image
                   src={LogoLight}
                   alt="Logo"
-                  className="h-16 w-auto lg:h-24"
+                  className="block dark:hidden h-16 w-auto lg:h-24"
+                />
+                <Image
+                  src={LogoDark}
+                  alt="Logo"
+                  className="hidden dark:block h-16 w-auto lg:h-24"
                 />
               </Link>
             </div>
@@ -112,6 +187,9 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Empty space to push content below fixed navbar - mobile only */}
+      <div className="h-32 sm:h-0"></div>
+
       {/* Overlay for sidebar - mobile only */}
       {isMenuOpen && (
         <div
@@ -134,7 +212,7 @@ export default function Navbar() {
                 <Image
                   src={LogoDark}
                   alt="dtalk logo"
-                  className="h-24 w-auto"
+                  className="h-20 w-auto"
                 />
               </div>
             </Link>
@@ -166,7 +244,7 @@ export default function Navbar() {
           <ul className="divide-y divide-gray-800">
             <li className="py-4 px-6">
               <Link
-                href="/digital"
+                href="/"
                 className="text-white text-xl hover:text-gray-700 transition-colors duration-300"
                 onClick={toggleMenu}
               >
@@ -175,7 +253,7 @@ export default function Navbar() {
             </li>
             <li className="py-4 px-6">
               <Link
-                href="/ekbis"
+                href="/"
                 className="text-white text-xl hover:text-gray-700 transition-colors duration-300"
                 onClick={toggleMenu}
               >
@@ -184,7 +262,7 @@ export default function Navbar() {
             </li>
             <li className="py-4 px-6">
               <Link
-                href="/hukum"
+                href="/"
                 className="text-white text-xl hover:text-gray-700 transition-colors duration-300"
                 onClick={toggleMenu}
               >
@@ -193,7 +271,7 @@ export default function Navbar() {
             </li>
             <li className="py-4 px-6">
               <Link
-                href="/politik"
+                href="/"
                 className="text-white text-xl hover:text-gray-700 transition-colors duration-300"
                 onClick={toggleMenu}
               >
@@ -229,7 +307,7 @@ export default function Navbar() {
       {/* Login Modal */}
       {showLoginModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-sm shadow-lg max-w-sm w-full mx-4 relative">
+          <div className="bg-white dark:bg-black rounded-sm shadow-lg max-w-sm w-full mx-4 relative">
             {/* Close button */}
             <button
               onClick={toggleLoginModal}
@@ -239,7 +317,7 @@ export default function Navbar() {
             </button>
 
             <div className="p-12 px-12 py-14">
-              <h2 className="text-3xl font-bold text-center mb-2">
+              <h2 className="text-3xl font-bold text-center mb-2 dark:text-white">
                 Welcome Back!
               </h2>
               <p className="text-gray-600 text-center mb-6">
@@ -251,7 +329,7 @@ export default function Navbar() {
                   <input
                     type="text"
                     placeholder="Username or Email"
-                    className="w-full border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-black text-center text-sm"
+                    className="w-full border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-black text-center text-sm dark:text-black dark:fill-slate-900"
                     required
                   />
                 </div>
@@ -260,14 +338,14 @@ export default function Navbar() {
                   <input
                     type="password"
                     placeholder="Password"
-                    className="w-full border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-black text-center text-sm"
+                    className="w-full border border-gray-300 rounded-sm p-2 focus:outline-none focus:ring-1 focus:ring-black text-center text-sm dark:text-black"
                     required
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-yellow-500 hover:bg-black text-white font-bold py-2 rounded-sm transition-colors duration-300"
+                  className="w-full bg-yellow-500 hover:bg-black dark:hover:bg-zinc-900 text-white font-bold py-2 rounded-sm transition-colors duration-300"
                 >
                   LOG IN
                 </button>

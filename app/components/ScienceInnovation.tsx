@@ -94,7 +94,7 @@ export default function ScienceInnovation() {
                     {article.category}
                   </div>
                   <Link href={article.link}>
-                    <h3 className="text-base sm:text-lg lg:text-xl text-black hover:text-yellow-300 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
+                    <h3 className="text-base sm:text-lg lg:text-xl text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
                       {article.title}
                     </h3>
                   </Link>
