@@ -86,6 +86,12 @@ export default function Navbar() {
 
   const toggleSearch = () => {
     setShowSearch(!showSearch);
+    // Prevent scrolling when search is open
+    if (!showSearch) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
   };
 
   const openLoginModal = () => {
@@ -196,6 +202,33 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+
+      {/* Search Overlay - Mobile */}
+      {showSearch && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
+          <button
+            onClick={toggleSearch}
+            className="absolute top-4 right-4 text-white focus:outline-none"
+            aria-label="Close Search"
+          >
+            <IoClose size={24} />
+          </button>
+
+          <div className="w-full max-w-xl px-4">
+            <div className="relative">
+              <input
+                type="text"
+                className="w-full bg-transparent border-b border-gray-600 text-white text-2xl font-semibold py-2 focus:outline-none text-left placeholder-white"
+                placeholder="Search..."
+                autoFocus
+              />
+            </div>
+            <p className="text-gray-400 text-xs mt-2 text-left">
+              Type above and press Enter to search. Press Esc to cancel
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Empty space to push content below fixed navbar - mobile only */}
       <div className="h-32 sm:h-0"></div>
