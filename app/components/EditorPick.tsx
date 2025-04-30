@@ -83,6 +83,7 @@ const EditorsPicks = () => {
                 <Image
                   src={item.image}
                   alt={item.title}
+                  title={item.title}
                   width={400}
                   height={250}
                   className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
@@ -115,6 +116,7 @@ const EditorsPicks = () => {
                 <Image
                   src={item.image}
                   alt={item.title}
+                  title={item.title}
                   fill
                   className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                 />

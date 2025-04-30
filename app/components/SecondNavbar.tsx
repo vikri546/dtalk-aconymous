@@ -33,7 +33,7 @@ export default function SecondNavbar() {
       image: Hot2,
       title:
         "HTC Launches a Vive VR Headset Into Space for Astronaut Mental Health",
-      date: "March 10, 2022",
+      date: "Maret 10, 2022",
       link: "#",
     },
     {
@@ -41,7 +41,7 @@ export default function SecondNavbar() {
       image: Hot3,
       title:
         "Samsung is Developing Bright MicroLED on Displays for AR Headsets",
-      date: "March 10, 2022",
+      date: "Maret 10, 2022",
       link: "#",
     },
   ];
@@ -321,6 +321,7 @@ export default function SecondNavbar() {
             />
             <button
               type="submit"
+              title="Subscribe for More Informations"
               className="w-full p-3 bg-yellow-500 hover:bg-zinc-800 text-white transition duration-300 font-bold text-sm uppercase"
             >
               SUBSCRIBE
@@ -350,6 +351,7 @@ export default function SecondNavbar() {
                   <Image
                     src={article.image}
                     alt={article.title}
+                    title={article.title}
                     className="w-full h-full object-cover rounded-md hover:opacity-80 transition-opacity ease-in-out duration-300"
                     width={112} // w-28 = 7rem = 112px
                     height={80} // h-20 = 5rem = 80px

@@ -57,6 +57,7 @@ export default function MahkamahKonstitusi() {
                   <Image
                     src={Mahkamah}
                     alt="Mahkamah Konstitusi"
+                    title="Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!"
                     fill
                     className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75"
                   />
@@ -135,6 +136,7 @@ export default function MahkamahKonstitusi() {
                       <Image
                         src={item.image}
                         alt={item.title}
+                        title={item.title}
                         fill
                         className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                       />

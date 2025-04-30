@@ -15,6 +15,7 @@ export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isLoginModalClosing, setIsLoginModalClosing] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -48,8 +49,7 @@ export default function Navbar() {
 
         if (currentScrollY < lastScrollY || currentScrollY <= 0) {
           setNavVisible(true);
-        }
-        else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
           setNavVisible(false);
           if (isMenuOpen) {
             setIsMenuOpen(false);
@@ -88,8 +88,18 @@ export default function Navbar() {
     setShowSearch(!showSearch);
   };
 
-  const toggleLoginModal = () => {
-    setShowLoginModal(!showLoginModal);
+  const openLoginModal = () => {
+    setShowLoginModal(true);
+    setIsLoginModalClosing(false);
+  };
+
+  const closeLoginModal = () => {
+    setIsLoginModalClosing(true);
+    // Wait for animation to complete before hiding the modal
+    setTimeout(() => {
+      setShowLoginModal(false);
+      setIsLoginModalClosing(false);
+    }, 300); // Match this with animation duration
   };
 
   const toggleMenu = () => {
@@ -175,7 +185,7 @@ export default function Navbar() {
 
               <div className="hidden sm:block">
                 <button
-                  onClick={toggleLoginModal}
+                  onClick={openLoginModal}
                   className="inline-flex items-center pt-8 py-2 border border-transparent text-Aco font-medium rounded-md text-black-600 hover:text-yellow-200 transition-colors duration-300"
                 >
                   <PiUserCircleFill className="mr-2 size-5" />
@@ -231,7 +241,7 @@ export default function Navbar() {
           <button
             onClick={() => {
               toggleMenu();
-              toggleLoginModal();
+              openLoginModal();
             }}
             className="bg-yellow-500 text-black py-2 px-8 font-medium rounded-sm hover:bg-yellow-400 transition-colors"
           >
@@ -306,11 +316,14 @@ export default function Navbar() {
 
       {/* Login Modal */}
       {showLoginModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-black rounded-sm shadow-lg max-w-sm w-full mx-4 relative">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fadeIn">
+          <div
+            className={`bg-white dark:bg-black rounded-sm shadow-lg max-w-sm w-full mx-4 relative 
+              ${isLoginModalClosing ? "animate-slideDown" : "animate-slideUp"}`}
+          >
             {/* Close button */}
             <button
-              onClick={toggleLoginModal}
+              onClick={closeLoginModal}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
             >
               <FiX size={24} />

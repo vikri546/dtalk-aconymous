@@ -63,6 +63,7 @@ export default function MobilePhones() {
                 <Image
                   src={article.image}
                   alt={article.title}
+                  title={article.title}
                   width={400}
                   height={250}
                   className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
@@ -92,6 +93,7 @@ export default function MobilePhones() {
           <Image
             src={Iklan}
             alt="Iklan"
+            title="Nothing to see here"
             width={970}
             height={125}
             className="object-cover"

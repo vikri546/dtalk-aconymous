@@ -130,6 +130,7 @@ export default function ScienceInnovation() {
                     <Image
                       src={article.image}
                       alt={article.title}
+                      title={article.title}
                       fill
                       className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                     />

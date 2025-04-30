@@ -95,7 +95,8 @@ export default function TechnologyNews() {
       alt: "Green sneakers",
     },
     {
-      title: "Security Cameras Make Us Feel Safe, but Are They Worth the Invasion?",
+      title:
+        "Security Cameras Make Us Feel Safe, but Are They Worth the Invasion?",
       image: GamingFour,
       alt: "Woman with flowers",
     },
@@ -140,33 +141,34 @@ export default function TechnologyNews() {
 
             <div className="mb-4 sm:mb-6">
               <div className="overflow-hidden">
-                <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-sm overflow-hidden">
-                  <Image
-                    src={Flower}
-                    alt="Flowers in vase"
-                    layout="fill"
-                    objectFit="cover"
-                    className="object-cover transition duration-300 ease-in-out hover:opacity-75"
-                    priority
-                  />
-                </div>
-                <div className="mt-2 sm:mt-4">
-                  <Link href="#">
+                <Link href="#">
+                  <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-sm overflow-hidden">
+                    <Image
+                      src={Flower}
+                      alt="Flowers in vase"
+                      title="Here's What Apple Really Means When It Says &ldquo;Shot On iPhone&rdquo;"
+                      layout="fill"
+                      objectFit="cover"
+                      className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                      priority
+                    />
+                  </div>
+                  <div className="mt-2 sm:mt-4">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300">
                       Here&apos;s What Apple Really Means When It Says
                       &ldquo;Shot On iPhone&rdquo;
                     </h1>
-                  </Link>
-                  <div className="flex flex-wrap items-center text-gray-600 text-sm">
-                    <Link
-                      href="/author/aco"
-                      className="dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 transition duration-300"
-                    >
-                      Aco
-                    </Link>
-                    <span className="mx-2">•</span>
-                    <span>November 19, 2022</span>
                   </div>
+                </Link>
+                <div className="flex flex-wrap items-center text-gray-600 text-sm">
+                  <Link
+                    href="/author/aco"
+                    className="dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 transition duration-300"
+                  >
+                    Aco
+                  </Link>
+                  <span className="mx-2">•</span>
+                  <span>November 19, 2022</span>
                 </div>
               </div>
             </div>
@@ -222,6 +224,7 @@ export default function TechnologyNews() {
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
+                        title={item.title}
                         fill
                         className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                       />
@@ -291,6 +294,7 @@ export default function TechnologyNews() {
                           <Image
                             src={item.image}
                             alt={item.alt}
+                            title={item.title}
                             layout="fill"
                             objectFit="cover"
                             className="object-cover transition duration-300 ease-in-out hover:opacity-75"

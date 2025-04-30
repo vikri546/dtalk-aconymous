@@ -63,14 +63,14 @@ export default function TrendingNews() {
                 <Image
                   src={TrendingOne}
                   alt="Person splashing in water"
+                  title="Rise Of The Robots Raises A Big Question: What Will Workers Do?"
                   fill
                   className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                 />
               </div>
               <div className="mt-3 sm:mt-4">
                 <h3 className="text-white text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight hover:text-yellow-300 transition-colors duration-300">
-                  Rise Of The Robots Raises A Big Question: What Will Workers
-                  Do?
+                  Rise Of The Robots Raises A Big Question: What Will Workers Do?
                 </h3>
               </div>
             </Link>
@@ -93,6 +93,7 @@ export default function TrendingNews() {
                     <Image
                       src={article.imageUrl}
                       alt={article.imageAlt}
+                      title={article.title}
                       fill
                       className="object-cover transition duration-300 ease-in-out hover:opacity-75"
                     />
