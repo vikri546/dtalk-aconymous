@@ -2,11 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Anton, DM_Sans } from "next/font/google";
 import TrendingOne from "../images/trending now/trending1.png";
 import TrendingTwo from "../images/trending now/trending2.png";
 import TrendingThree from "../images/trending now/trending3.png";
 import TrendingFour from "../images/trending now/trending4.png";
 import TrendingFive from "../images/trending now/trending5.png";
+
+// Initialize the fonts
+const anton = Anton({
+  weight: '400', // Anton typically only has 400 weight
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anton',
+});
+
+const dmSans = DM_Sans({
+  weight: ['600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dmsans',
+});
 
 export default function TrendingNews() {
   const sideArticles = [
@@ -46,11 +62,11 @@ export default function TrendingNews() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-4 sm:px-6">
+    <div className={`${dmSans.variable} w-full max-w-6xl mx-auto py-4 sm:px-6`}>
       <div className="bg-gradient-to-b from-amber-400 to-black rounded-none sm:rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-10">
         <div className="flex items-center justify-center mb-4 sm:mb-6 md:mb-8">
           <div className="h-[2px] bg-yellow-400 w-96"></div>
-          <h2 className="text-center text-white text-xl sm:text-2xl md:text-3xl font-bold mx-2 sm:mx-4 whitespace-nowrap">
+          <h2 className={`${anton.className} text-center text-white text-2xl md:text-3xl lg:text-4xl font-medium mx-2 sm:mx-4 whitespace-nowrap`}>
             TRENDING NOW
           </h2>
           <div className="h-[2px] bg-yellow-400 w-96"></div>
@@ -69,12 +85,12 @@ export default function TrendingNews() {
                 />
               </div>
               <div className="mt-3 sm:mt-4">
-                <h3 className="text-white text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold leading-tight hover:text-yellow-300 transition-colors duration-300">
+                <h3 className={`${anton.className} text-white text-2xl sm:text-3xl md:text-3xl lg:text-5xl font-semibold leading-tight hover:text-yellow-300 transition-colors duration-300`}>
                   Rise Of The Robots Raises A Big Question: What Will Workers Do?
                 </h3>
               </div>
             </Link>
-            <div className="mt-2 text-white text-sm">
+            <div className="mt-2 text-white text-sm font-dmsans-600">
               <Link
                 href="/author/aco"
                 className="hover:text-yellow-300 transition duration-300"
@@ -99,12 +115,12 @@ export default function TrendingNews() {
                     />
                   </div>
                   <div className="mt-2">
-                    <h3 className="text-white text-sm sm:text-base font-bold leading-tight hover:text-yellow-300 transition duration-300">
+                    <h3 className={`font-dmsans-600 text-white text-sm sm:text-base font-semibold leading-tight hover:text-yellow-300 transition duration-300`}>
                       {article.title}
                     </h3>
                   </div>
                 </Link>
-                <div className="text-white/80 text-xs mt-1">
+                <div className="text-white/80 text-xs mt-1 font-dmsans-600">
                   {article.date}
                 </div>
               </div>

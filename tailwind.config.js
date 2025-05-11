@@ -24,6 +24,10 @@ module.exports = {
         slideUp: 'slideUp 0.3s ease-out',
         slideDown: 'slideDown 0.3s ease-out',
       },
+      fontFamily: {
+        'anton': ['var(--font-anton)'],
+        'dmsans': ['var(--font-dmsans)'],
+      },
     },
   },
   plugins: [],

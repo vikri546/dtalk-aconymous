@@ -7,6 +7,14 @@ import OneImage from "../images/mobile phones/one.png";
 import TwoImage from "../images/mobile phones/two.png";
 import ThreeImage from "../images/mobile phones/three.png";
 import Iklan from "../images/iklan.png";
+import { DM_Sans } from 'next/font/google';
+
+// Initialize the DM Sans font
+const dmSans = DM_Sans({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function MobilePhones() {
   const articles = [
@@ -34,7 +42,7 @@ export default function MobilePhones() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-8 py-8">
+    <div className={`max-w-6xl mx-auto px-8 py-8 ${dmSans.className}`} style={{ fontFamily: '"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif', fontWeight: 'normal' }}>
       <Head>
         <title>Mobile Phones</title>
         <meta name="description" content="Latest mobile phone news and deals" />

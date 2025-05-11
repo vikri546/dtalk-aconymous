@@ -7,10 +7,19 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
+import { DM_Sans } from "next/font/google";
 import LogoDark from "../images/dtalk-dark-theme-logo-retina.png";
 import Hot1 from "../images/subscribes/picks1.png";
 import Hot2 from "../images/subscribes/picks2.png";
 import Hot3 from "../images/subscribes/picks3.png";
+
+// Initialize DM Sans font
+const dmSans = DM_Sans({
+  weight: ["400", "500", "700"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function SecondNavbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -47,51 +56,54 @@ export default function SecondNavbar() {
   ];
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
       setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
       setIsDarkMode(false);
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       const scrollThreshold = 10;
-      
+
       if (currentScrollY > 50) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
       }
-      
+
       if (currentScrollY > lastScrollY + scrollThreshold && isSticky) {
         // Scrolling down
         setVisible(false);
-      } else if (currentScrollY < lastScrollY - scrollThreshold || currentScrollY <= 0) {
+      } else if (
+        currentScrollY < lastScrollY - scrollThreshold ||
+        currentScrollY <= 0
+      ) {
         // Scrolling up or at the top
         setVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -122,13 +134,15 @@ export default function SecondNavbar() {
   };
 
   return (
-    <>
+    <div className={dmSans.className}>
       {/* Desktop Navigation */}
-      <nav 
+      <nav
         className={`fixed w-full z-40 hidden md:block transition-all duration-300 ${
-          isSticky 
-            ? `fixed ${visible ? 'translate-y-0' : '-translate-y-full'} bg-white dark:bg-zinc-900 top-0 shadow-md`
-            : 'absolute bg-transparent'
+          isSticky
+            ? `fixed ${
+                visible ? "translate-y-0" : "-translate-y-full"
+              } bg-white dark:bg-zinc-900 top-0 shadow-md`
+            : "absolute bg-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,25 +159,25 @@ export default function SecondNavbar() {
             <div className="flex space-x-10">
               <Link
                 href="/"
-                className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+                className="text-sm text-black-600 font-semibold hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 DIGITAL
               </Link>
               <Link
                 href="/"
-                className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+                className="text-sm text-black-600 font-semibold hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 EKBIS
               </Link>
               <Link
                 href="/"
-                className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+                className="text-sm text-black-600 font-semibold hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 HUKUM
               </Link>
               <Link
                 href="/"
-                className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
+                className="text-sm text-black-600 font-semibold hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
               >
                 POLITIK
               </Link>
@@ -358,7 +372,7 @@ export default function SecondNavbar() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-white text-lg font-semibold hover:text-yellow-400 transition-colors duration-300">
+                  <h4 className="text-white text-base font-semibold hover:text-yellow-400 transition-colors duration-300">
                     {article.title}
                   </h4>
                   <p className="text-gray-400 text-sm mt-1">{article.date}</p>
@@ -378,7 +392,7 @@ export default function SecondNavbar() {
           </a>
           <a
             href="#"
-            className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow hover:bg-gray-700 transition-colors"
+            className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:text-yellow-200 dark:text-black-400             dark:hover:text-yellow hover:bg-gray-700 transition-colors"
           >
             <FaXTwitter />
           </a>
@@ -390,6 +404,6 @@ export default function SecondNavbar() {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 }

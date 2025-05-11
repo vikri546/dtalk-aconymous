@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { DM_Sans } from "next/font/google";
 import EditorPick1 from "../images/editor pick/editor1.png";
 import EditorPick2 from "../images/editor pick/editor2.png";
 import EditorPick3 from "../images/editor pick/editor3.png";
@@ -8,6 +9,13 @@ import SecondPick1 from "../images/editor pick/second pick/editor1.png";
 import SecondPick2 from "../images/editor pick/second pick/editor2.png";
 import SecondPick3 from "../images/editor pick/second pick/editor3.png";
 import SecondPick4 from "../images/editor pick/second pick/editor4.png";
+
+// Initialize DM Sans font
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+});
 
 const topEditorPicks = [
   {
@@ -66,7 +74,7 @@ const bottomEditorPicks = [
 
 const EditorsPicks = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-4">
+    <div className={`max-w-6xl mx-auto px-4 py-4 ${dmSans.className}`}>
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-xl font-bold">Editor&apos;s Picks</h2>
       </div>

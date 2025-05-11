@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { DM_Sans } from "next/font/google";
 import MostPopular1 from "../images/subscribes/popular1.png";
 import MostPopular2 from "../images/subscribes/popular2.png";
 import MostPopular3 from "../images/subscribes/popular3.png";
@@ -9,6 +10,13 @@ import OurPicks1 from "../images/subscribes/picks1.png";
 import OurPicks2 from "../images/subscribes/picks2.png";
 import OurPicks3 from "../images/subscribes/picks3.png";
 import Link from "next/link";
+
+// Initialize DM Sans font
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+});
 
 export default function Subscribe() {
   const [email, setEmail] = useState("");
@@ -73,7 +81,7 @@ export default function Subscribe() {
   };
 
   return (
-    <div className="bg-zinc-950 text-white py-12">
+    <div className={`bg-zinc-950 text-white py-12 ${dmSans.className}`}>
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-14">
           {/* Most Popular Section */}

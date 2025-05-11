@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Anton, DM_Sans } from 'next/font/google';
 import Flower from "../images/flower.png";
 import TechnologyOne from "../images/technology news/image1.png";
 import TechnologyTwo from "../images/technology news/image2.png";
@@ -15,6 +16,21 @@ import GamingOne from "../images/technology news/gaming news/gaming1.png";
 import GamingTwo from "../images/technology news/gaming news/gaming2.png";
 import GamingThree from "../images/technology news/gaming news/gaming3.png";
 import GamingFour from "../images/technology news/gaming news/gaming4.png";
+
+// Initialize the fonts
+const anton = Anton({
+  weight: '400', // Anton only comes in 400 weight
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anton',
+});
+
+const dmSans = DM_Sans({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+});
 
 export default function TechnologyNews() {
   const [loadedItems, setLoadedItems] = useState(4);
@@ -121,7 +137,7 @@ export default function TechnologyNews() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className={`max-w-6xl mx-auto ${dmSans.variable}`}>
       <Head>
         <title>Tech & Gaming News</title>
         <meta name="description" content="Latest technology and gaming news" />
@@ -129,7 +145,7 @@ export default function TechnologyNews() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <main className="w-full mx-auto px-4 sm:px-6 py-4 sm:py-8">
+      <main className="w-full mx-auto px-4 sm:px-6 py-4 sm:py-8 font-dm-sans">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 mb-8">
           <div className="w-full lg:w-8/12">
             <h2 className="text-xl sm:text-2xl font-bold mb-2">
@@ -154,7 +170,7 @@ export default function TechnologyNews() {
                     />
                   </div>
                   <div className="mt-2 sm:mt-4">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300">
+                    <h1 className={`${anton.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300`}>
                       Here&apos;s What Apple Really Means When It Says
                       &ldquo;Shot On iPhone&rdquo;
                     </h1>

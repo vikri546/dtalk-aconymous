@@ -7,6 +7,16 @@ import Article2 from "../images/articles/article2.png";
 import Article3 from "../images/articles/article3.png";
 import Article4 from "../images/articles/article4.png";
 
+// Import DM Sans font
+import { DM_Sans } from 'next/font/google';
+
+// Initialize the DM Sans font
+const dmSans = DM_Sans({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 export default function ScienceInnovation() {
   const articles = [
     {
@@ -72,7 +82,7 @@ export default function ScienceInnovation() {
   ];
 
   return (
-    <div className="max-w-6xl px-8 py-8 mx-auto">
+    <div className={`max-w-6xl px-8 py-8 mx-auto ${dmSans.className}`} style={{ fontFamily: '"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif', fontWeight: 'normal' }}>
       <div className="flex w-full flex-col md:flex-row gap-20">
         <div className="flex-1">
           <div className="flex justify-between items-center mb-4">
@@ -94,7 +104,7 @@ export default function ScienceInnovation() {
                     {article.category}
                   </div>
                   <Link href={article.link}>
-                    <h3 className="text-base sm:text-lg lg:text-xl text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
+                    <h3 className="text-base sm:text-lg lg:text-2xl text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
                       {article.title}
                     </h3>
                   </Link>
@@ -158,7 +168,7 @@ export default function ScienceInnovation() {
                         <span className="text-xl font-bold text-yellow-500 mr-3">
                           {index + 1}.
                         </span>
-                        <h3 className="text-base font-semibold group-hover:text-yellow-500 transition-colors duration-300">
+                        <h3 className="text-lg font-semibold group-hover:text-yellow-500 transition-colors duration-300">
                           {post.title}
                         </h3>
                       </div>

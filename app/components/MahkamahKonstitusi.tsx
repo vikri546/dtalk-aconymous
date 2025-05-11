@@ -2,11 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Anton, DM_Sans } from 'next/font/google';
 import Mahkamah from "../images/mahkamah.png";
 import SecondImage from "../images/circle/second.png";
 import SixImage from "../images/circle/six.png";
 import SevenImage from "../images/circle/seven.png";
 import EightImage from "../images/circle/eight.png";
+
+// Configure the Anton font with normal style
+const antonFont = Anton({
+  weight: '400', // Anton typically only comes in 400 weight
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+// Configure the DM Sans font with normal style
+const dmSansFont = DM_Sans({
+  weight: ['400', '500', '700'],
+  style: 'normal',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function MahkamahKonstitusi() {
   const newsItems = [
@@ -62,7 +78,7 @@ export default function MahkamahKonstitusi() {
                     className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75"
                   />
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight max-w-full break-words mt-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300">
+                <h1 className={`${antonFont.className} text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-full break-words mt-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300`}>
                   Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!
                 </h1>
               </Link>
@@ -78,7 +94,7 @@ export default function MahkamahKonstitusi() {
             </div>
           </div>
 
-          <div className="md:w-1/3 px-2 w-full">
+          <div className={`md:w-1/3 px-2 w-full ${dmSansFont.className}`}>
             <div className="mb-4 flex items-center w-full">
               <h2 className="text-yellow-500 text-xl font-bold mr-2">News</h2>
               <span className="text-gray-800 dark:text-white text-xl font-bold flex-grow">
