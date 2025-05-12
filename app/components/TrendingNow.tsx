@@ -11,17 +11,17 @@ import TrendingFive from "../images/trending now/trending5.png";
 
 // Initialize the fonts
 const anton = Anton({
-  weight: '400', // Anton typically only has 400 weight
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-anton',
+  weight: "400", // Anton typically only has 400 weight
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-anton",
 });
 
 const dmSans = DM_Sans({
-  weight: ['600'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-dmsans',
+  weight: ["600"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dmsans",
 });
 
 export default function TrendingNews() {
@@ -66,7 +66,9 @@ export default function TrendingNews() {
       <div className="bg-gradient-to-b from-amber-400 to-black rounded-none sm:rounded-lg overflow-hidden p-4 sm:p-6 md:p-8 lg:p-10">
         <div className="flex items-center justify-center mb-4 sm:mb-6 md:mb-8">
           <div className="h-[2px] bg-yellow-400 w-96"></div>
-          <h2 className={`${anton.className} text-center text-white text-2xl md:text-3xl lg:text-4xl font-medium mx-2 sm:mx-4 whitespace-nowrap`}>
+          <h2
+            className={`${anton.className} text-center text-white text-3xl lg:text-4xl font-medium mx-2 sm:mx-4 whitespace-nowrap`}
+          >
             TRENDING NOW
           </h2>
           <div className="h-[2px] bg-yellow-400 w-96"></div>
@@ -85,8 +87,11 @@ export default function TrendingNews() {
                 />
               </div>
               <div className="mt-3 sm:mt-4">
-                <h3 className={`${anton.className} text-white text-2xl sm:text-3xl md:text-3xl lg:text-5xl font-semibold leading-tight hover:text-yellow-300 transition-colors duration-300`}>
-                  Rise Of The Robots Raises A Big Question: What Will Workers Do?
+                <h3
+                  className={`${anton.className} text-white text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight hover:text-yellow-300 transition-colors duration-300`}
+                >
+                  Rise Of The Robots Raises A Big Question: What Will Workers
+                  Do?
                 </h3>
               </div>
             </Link>
@@ -111,11 +116,13 @@ export default function TrendingNews() {
                       alt={article.imageAlt}
                       title={article.title}
                       fill
-                      className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                      className="object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                     />
                   </div>
                   <div className="mt-2">
-                    <h3 className={`font-dmsans-600 text-white text-sm sm:text-base font-semibold leading-tight hover:text-yellow-300 transition duration-300`}>
+                    <h3
+                      className={`font-dmsans-600 text-white text-sm sm:text-base font-semibold leading-tight hover:text-yellow-300 transition duration-300`}
+                    >
                       {article.title}
                     </h3>
                   </div>

@@ -13,9 +13,9 @@ import Link from "next/link";
 
 // Initialize DM Sans font
 const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 export default function Subscribe() {
@@ -100,7 +100,7 @@ export default function Subscribe() {
                           title={article.title}
                           layout="fill"
                           objectFit="cover"
-                          className="hover:opacity-80 transition-opacity"
+                          className="hover:opacity-80 transition-opacity shadow-lg"
                         />
                       </div>
                     </Link>
@@ -167,7 +167,7 @@ export default function Subscribe() {
                           title={article.title}
                           layout="fill"
                           objectFit="cover"
-                          className="hover:opacity-80 transition-opacity"
+                          className="hover:opacity-80 transition-opacity shadow-lg"
                         />
                       </div>
                     </Link>
@@ -224,7 +224,7 @@ export default function Subscribe() {
 
           {/* Subscribe Section */}
           <div className="w-full mx-auto md:w-1/3 py-6 md:py-0 px-4 lg:px-0">
-            <div className="bg-black border border-zinc-800 p-10 rounded-lg shadow-md">
+            <div className="bg-black border border-zinc-800 p-10 rounded-sm shadow-md">
               <h2 className="text-3xl font-bold mb-4 text-center">
                 Subscribe to Updates
               </h2>

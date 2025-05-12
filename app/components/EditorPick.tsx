@@ -12,9 +12,9 @@ import SecondPick4 from "../images/editor pick/second pick/editor4.png";
 
 // Initialize DM Sans font
 const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 const topEditorPicks = [
@@ -79,7 +79,7 @@ const EditorsPicks = () => {
         <h2 className="text-xl font-bold">Editor&apos;s Picks</h2>
       </div>
 
-      <div className="w-full h-[3px] bg-gray-200 mb-4">
+      <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 mb-4">
         <div className="w-10 h-[3px] bg-yellow-500"></div>
       </div>
 
@@ -94,7 +94,7 @@ const EditorsPicks = () => {
                   title={item.title}
                   width={400}
                   height={250}
-                  className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
+                  className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                 />
               </div>
               <h2 className="text-xl font-bold mb-2 text-black dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500 transition duration-300 line-clamp-2">
@@ -126,7 +126,7 @@ const EditorsPicks = () => {
                   alt={item.title}
                   title={item.title}
                   fill
-                  className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                  className="object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                 />
               </div>
               <h3 className="text-base font-bold text-black dark:text-white hover:text-yellow-400 dark:hover:text-yellow-500 transition duration-300 leading-tight mt-2">

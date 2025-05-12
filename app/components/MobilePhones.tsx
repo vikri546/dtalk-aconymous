@@ -7,13 +7,13 @@ import OneImage from "../images/mobile phones/one.png";
 import TwoImage from "../images/mobile phones/two.png";
 import ThreeImage from "../images/mobile phones/three.png";
 import Iklan from "../images/iklan.png";
-import { DM_Sans } from 'next/font/google';
+import { DM_Sans } from "next/font/google";
 
 // Initialize the DM Sans font
 const dmSans = DM_Sans({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export default function MobilePhones() {
@@ -42,7 +42,14 @@ export default function MobilePhones() {
   ];
 
   return (
-    <div className={`max-w-6xl mx-auto px-8 py-8 ${dmSans.className}`} style={{ fontFamily: '"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif', fontWeight: 'normal' }}>
+    <div
+      className={`max-w-6xl mx-auto px-8 py-8 ${dmSans.className}`}
+      style={{
+        fontFamily:
+          '"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+        fontWeight: "normal",
+      }}
+    >
       <Head>
         <title>Mobile Phones</title>
         <meta name="description" content="Latest mobile phone news and deals" />
@@ -53,13 +60,13 @@ export default function MobilePhones() {
         <h1 className="text-xl font-bold">Mobile Phones</h1>
         <Link
           href="/mobiles"
-          className="border-2 border-gray-300 rounded-full px-4 py-2 text-xs text-gray-500 hover:text-gray-700 dark:hover:text-white transition duration-300"
+          className="border-2 border-zinc-600 rounded-full px-4 py-2 text-xs text-gray-500 hover:text-gray-700 dark:hover:text-white transition duration-300"
         >
           More from Mobiles
         </Link>
       </div>
 
-      <div className="w-full h-[3px] bg-gray-200 mb-8">
+      <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 mb-8">
         <div className="w-10 h-[3px] bg-yellow-500"></div>
       </div>
 
@@ -74,7 +81,7 @@ export default function MobilePhones() {
                   title={article.title}
                   width={400}
                   height={250}
-                  className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75"
+                  className="w-full h-64 object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                 />
               </div>
               <h2 className="text-xl font-bold mb-2 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300">
@@ -104,7 +111,7 @@ export default function MobilePhones() {
             title="Nothing to see here"
             width={970}
             height={125}
-            className="object-cover"
+            className="object-cover shadow-lg"
           />
         </Link>
       </div>

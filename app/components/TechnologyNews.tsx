@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Anton, DM_Sans } from 'next/font/google';
+import { Anton, DM_Sans } from "next/font/google";
 import Flower from "../images/flower.png";
 import TechnologyOne from "../images/technology news/image1.png";
 import TechnologyTwo from "../images/technology news/image2.png";
@@ -19,17 +19,17 @@ import GamingFour from "../images/technology news/gaming news/gaming4.png";
 
 // Initialize the fonts
 const anton = Anton({
-  weight: '400', // Anton only comes in 400 weight
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-anton',
+  weight: "400", // Anton only comes in 400 weight
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-anton",
 });
 
 const dmSans = DM_Sans({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-dm-sans',
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm-sans",
 });
 
 export default function TechnologyNews() {
@@ -148,10 +148,8 @@ export default function TechnologyNews() {
       <main className="w-full mx-auto px-4 sm:px-6 py-4 sm:py-8 font-dm-sans">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 mb-8">
           <div className="w-full lg:w-8/12">
-            <h2 className="text-xl sm:text-2xl font-bold mb-2">
-              Technology News
-            </h2>
-            <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3 mb-4 sm:mb-6">
+            <h2 className="text-xl lg:text-2xl font-bold mb-2">Technology News</h2>
+            <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 my-2 sm:my-3 mb-4 sm:mb-6">
               <div className="w-10 h-[3px] bg-yellow-500"></div>
             </div>
 
@@ -165,12 +163,14 @@ export default function TechnologyNews() {
                       title="Here's What Apple Really Means When It Says &ldquo;Shot On iPhone&rdquo;"
                       layout="fill"
                       objectFit="cover"
-                      className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                      className="object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                       priority
                     />
                   </div>
                   <div className="mt-2 sm:mt-4">
-                    <h1 className={`${anton.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300`}>
+                    <h1
+                      className={`${anton.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300`}
+                    >
                       Here&apos;s What Apple Really Means When It Says
                       &ldquo;Shot On iPhone&rdquo;
                     </h1>
@@ -194,7 +194,7 @@ export default function TechnologyNews() {
               <div
                 key={index}
                 className={`${
-                  index !== loadedItems - 1 ? "border-b border-gray-200" : ""
+                  index !== loadedItems - 1 ? "border-b border-gray-200 dark:border-zinc-700" : ""
                 } py-2 pb-2 sm:pb-4 mb-2 sm:mb-4`}
               >
                 <div className="flex flex-row gap-3 sm:gap-6">
@@ -242,7 +242,7 @@ export default function TechnologyNews() {
                         alt={item.imageAlt}
                         title={item.title}
                         fill
-                        className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                        className="object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-xl"
                       />
                     </div>
                   </Link>
@@ -295,7 +295,7 @@ export default function TechnologyNews() {
                 <h2 className="text-xl sm:text-2xl font-bold mb-2">
                   <div>Gaming News</div>
                 </h2>
-                <div className="w-full h-[3px] bg-gray-200 my-2 sm:my-3 mb-4 sm:mb-6">
+                <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 my-2 sm:my-3 mb-4 sm:mb-6">
                   <div className="w-10 h-[3px] bg-yellow-500"></div>
                 </div>
 
@@ -313,7 +313,7 @@ export default function TechnologyNews() {
                             title={item.title}
                             layout="fill"
                             objectFit="cover"
-                            className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                            className="object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                           />
                         </div>
                       </Link>

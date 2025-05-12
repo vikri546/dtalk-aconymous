@@ -366,7 +366,7 @@ export default function SecondNavbar() {
                     src={article.image}
                     alt={article.title}
                     title={article.title}
-                    className="w-full h-full object-cover rounded-md hover:opacity-80 transition-opacity ease-in-out duration-300"
+                    className="w-full h-full object-cover rounded-md hover:opacity-80 transition-opacity ease-in-out duration-300 shadow-lg"
                     width={112} // w-28 = 7rem = 112px
                     height={80} // h-20 = 5rem = 80px
                   />

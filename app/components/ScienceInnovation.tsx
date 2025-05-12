@@ -8,13 +8,13 @@ import Article3 from "../images/articles/article3.png";
 import Article4 from "../images/articles/article4.png";
 
 // Import DM Sans font
-import { DM_Sans } from 'next/font/google';
+import { DM_Sans } from "next/font/google";
 
 // Initialize the DM Sans font
 const dmSans = DM_Sans({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export default function ScienceInnovation() {
@@ -82,14 +82,21 @@ export default function ScienceInnovation() {
   ];
 
   return (
-    <div className={`max-w-6xl px-8 py-8 mx-auto ${dmSans.className}`} style={{ fontFamily: '"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif', fontWeight: 'normal' }}>
+    <div
+      className={`max-w-6xl px-8 py-8 mx-auto ${dmSans.className}`}
+      style={{
+        fontFamily:
+          '"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+        fontWeight: "normal",
+      }}
+    >
       <div className="flex w-full flex-col md:flex-row gap-20">
         <div className="flex-1">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-xl font-bold">Science & Innovation</h1>
           </div>
 
-          <div className="w-full h-[3px] bg-gray-200 mb-8">
+          <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 mb-8">
             <div className="w-10 h-[3px] bg-yellow-500"></div>
           </div>
 
@@ -97,7 +104,7 @@ export default function ScienceInnovation() {
             {articles.map((article, index) => (
               <div
                 key={index}
-                className="flex items-center border-b-2 border-gray-200 pb-3"
+                className="flex items-center border-b-[1px] border-gray-200 dark:border-zinc-700 pb-3"
               >
                 <div className="flex-grow pr-2">
                   <div className="text-yellow-500 text-xs font-semibold mb-2">
@@ -142,7 +149,7 @@ export default function ScienceInnovation() {
                       alt={article.title}
                       title={article.title}
                       fill
-                      className="object-cover transition duration-300 ease-in-out hover:opacity-75"
+                      className="object-cover transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                     />
                   </div>
                 </Link>
@@ -157,10 +164,10 @@ export default function ScienceInnovation() {
               <h2 className="text-xl font-bold">
                 <span className="text-yellow-500">Most Read</span> Posts
               </h2>
-              <div className="w-full h-[3px] bg-gray-200 my-3">
+              <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 my-3">
                 <div className="w-10 h-[3px] bg-yellow-500"></div>
               </div>
-              <ul className="divide-y divide-gray-200">
+              <ul className="divide-y divide-gray-200 dark:divide-zinc-700">
                 {mostReadPosts.map((post, index) => (
                   <li key={index} className="py-3">
                     <Link href={post.link} className="group">
@@ -176,7 +183,7 @@ export default function ScienceInnovation() {
                   </li>
                 ))}
               </ul>
-              <div className="w-full h-[1px] bg-gray-200 mt-1"></div>
+              <div className="w-full border-b-[1px] border-gray-200 dark:border-zinc-700 mt-1"></div>
             </div>
           </div>
         </div>

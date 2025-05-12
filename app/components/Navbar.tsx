@@ -122,11 +122,11 @@ export default function Navbar() {
     <>
       <nav
         ref={navbarRef}
-        className={`w-full border-b border-black-200 dark:border-black-800 dark:bg-black sm:relative fixed top-0 left-0 right-0 z-30 transition-transform duration-300 ${
+        className={`w-full border-b border-black-200 dark:border-slate-800 dark:bg-black sm:relative fixed top-0 left-0 right-0 z-30 transition-transform duration-300 ${
           navVisible ? "translate-y-0" : "-translate-y-full sm:translate-y-0"
         } bg-white dark:bg-black`}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 sm:mb-6 md:mb-8">
           <div className="flex justify-between h-16 items-center">
             <div className="hidden sm:flex space-x-2 pt-6">
               <Link
@@ -149,7 +149,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="flex-shrink-0 pt-8">
+            <div className="flex-shrink-0 pt-4 sm:pt-6 md:pt-8">
               <Link
                 href="https://dtalk-aconymous.vercel.app/"
                 className="flex items-center justify-center"
@@ -157,18 +157,18 @@ export default function Navbar() {
                 <Image
                   src={LogoLight}
                   alt="Logo"
-                  className="block dark:hidden h-16 w-auto lg:h-24"
+                  className="block dark:hidden h-12 sm:h-16 w-auto lg:h-24"
                 />
                 <Image
                   src={LogoDark}
                   alt="Logo"
-                  className="hidden dark:block h-16 w-auto lg:h-24"
+                  className="hidden dark:block h-12 sm:h-16 w-auto lg:h-24"
                 />
               </Link>
             </div>
 
             <div className="flex items-center">
-              <div className="flex space-x-4 sm:hidden pt-6">
+              <div className="flex space-x-4 sm:hidden pt-4">
                 <button
                   onClick={toggleSearch}
                   className="text-black-600 hover:text-yellow-200 dark:text-black-400 dark:hover:text-yellow transition-colors duration-300"
@@ -214,7 +214,7 @@ export default function Navbar() {
             <IoClose size={24} />
           </button>
 
-          <div className="w-full max-w-xl px-4">
+          <div className="w-full max-w-xl px-10">
             <div className="relative">
               <input
                 type="text"

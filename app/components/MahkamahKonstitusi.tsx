@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Anton, DM_Sans } from 'next/font/google';
+import { Anton, DM_Sans } from "next/font/google";
 import Mahkamah from "../images/mahkamah.png";
 import SecondImage from "../images/circle/second.png";
 import SixImage from "../images/circle/six.png";
@@ -11,17 +11,17 @@ import EightImage from "../images/circle/eight.png";
 
 // Configure the Anton font with normal style
 const antonFont = Anton({
-  weight: '400', // Anton typically only comes in 400 weight
-  subsets: ['latin'],
-  display: 'swap',
+  weight: "400", // Anton typically only comes in 400 weight
+  subsets: ["latin"],
+  display: "swap",
 });
 
 // Configure the DM Sans font with normal style
 const dmSansFont = DM_Sans({
-  weight: ['400', '500', '700'],
-  style: 'normal',
-  subsets: ['latin'],
-  display: 'swap',
+  weight: ["400", "500", "700"],
+  style: "normal",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export default function MahkamahKonstitusi() {
@@ -75,14 +75,16 @@ export default function MahkamahKonstitusi() {
                     alt="Mahkamah Konstitusi"
                     title="Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!"
                     fill
-                    className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75"
+                    className="object-cover bg-cover bg-center rounded scale-200 transition duration-300 ease-in-out hover:opacity-75 shadow-xl"
                   />
                 </div>
-                <h1 className={`${antonFont.className} text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-full break-words mt-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300`}>
+                <h1
+                  className={`${antonFont.className} text-4xl sm:text-5xl lg:text-6xl font-black leading-tight max-w-full break-words mt-4 text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300`}
+                >
                   Apa Itu Mahkamah Konstitusi? Kenali Perannya di Negara Kita!
                 </h1>
               </Link>
-              <div className="mt-3 text-gray-700 text-sm">
+              <div className="mt-3 text-gray-700 dark:text-gray-400 text-sm">
                 <Link
                   href="/author/aco"
                   className="dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition duration-300"
@@ -101,22 +103,22 @@ export default function MahkamahKonstitusi() {
                 Just In
               </span>
             </div>
-            <div className="w-full h-1 bg-gray-200 mb-8">
-              <div className="w-10 h-1 bg-yellow-500"></div>
+            <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 mb-8">
+              <div className="w-10 h-[3px] bg-yellow-500"></div>
             </div>
 
             <div className="space-y-6 w-full">
               {newsItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center border-b-2 border-gray-200 pb-3 w-full"
+                  className="flex items-center border-b-[1px] border-gray-200 dark:border-zinc-700 pb-3 w-full"
                 >
                   <div className="flex-grow pr-2">
-                    <div className="text-yellow-500 text-xs font-semibold mb-2">
+                    <div className="text-yellow-500 text-xs font-bold mb-2">
                       {item.category}
                     </div>
                     <Link href={item.link}>
-                      <h3 className="text-base text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
+                      <h3 className="text-lg md:text-base text-black dark:text-white hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors duration-300 ease-in-out hover:opacity-75 font-bold mb-3 line-clamp-2">
                         {item.title}
                       </h3>
                     </Link>

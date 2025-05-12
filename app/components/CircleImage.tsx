@@ -99,13 +99,13 @@ export default function FirstSection() {
               <Link
                 key={index}
                 href="/"
-                className="relative flex-shrink-0 w-20 h-20 rounded-full overflow-hidden border-4 border-black-200 dark:border-black-800"
+                className="relative flex-shrink-0 w-20 h-20 rounded-full overflow-hidden border-[3px] border-black-200 dark:border-zinc-400"
               >
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover bg-cover bg-center rounded transition duration-300 ease-in-out hover:opacity-75"
+                  className="object-cover bg-cover bg-center rounded transition duration-300 ease-in-out hover:opacity-75 shadow-lg"
                 />
               </Link>
             ))}
