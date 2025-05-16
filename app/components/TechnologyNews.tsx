@@ -137,7 +137,9 @@ export default function TechnologyNews() {
   };
 
   return (
-    <div className={`max-w-6xl mx-auto ${dmSans.variable}`}>
+    <div
+      className={`max-w-6xl mx-auto ${dmSans.variable} font-['DM_Sans',system-ui,-apple-system,'Segoe_UI',Arial,sans-serif]`}
+    >
       <Head>
         <title>Tech & Gaming News</title>
         <meta name="description" content="Latest technology and gaming news" />
@@ -148,7 +150,9 @@ export default function TechnologyNews() {
       <main className="w-full mx-auto px-4 sm:px-6 py-4 sm:py-8 font-dm-sans">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 mb-8">
           <div className="w-full lg:w-8/12">
-            <h2 className="text-xl lg:text-2xl font-bold mb-2">Technology News</h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-2">
+              Technology News
+            </h2>
             <div className="w-full h-[3px] bg-gray-200 dark:bg-zinc-600 my-2 sm:my-3 mb-4 sm:mb-6">
               <div className="w-10 h-[3px] bg-yellow-500"></div>
             </div>
@@ -194,7 +198,9 @@ export default function TechnologyNews() {
               <div
                 key={index}
                 className={`${
-                  index !== loadedItems - 1 ? "border-b border-gray-200 dark:border-zinc-700" : ""
+                  index !== loadedItems - 1
+                    ? "border-b border-gray-200 dark:border-zinc-700"
+                    : ""
                 } py-2 pb-2 sm:pb-4 mb-2 sm:mb-4`}
               >
                 <div className="flex flex-row gap-3 sm:gap-6">
